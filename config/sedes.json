@@ -1,0 +1,6 @@
+{
+  "medellin": { "entrada": "08:00", "salida": "17:00" },
+  "cartagena": { "entrada": "09:30", "salida": "17:30" },
+  "barranquilla": { "entrada": "08:00", "salida": "17:00" }
+}
+

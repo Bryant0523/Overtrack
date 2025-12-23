@@ -1,0 +1,659 @@
+ID de persona,Nombre,Departamento,Hora,Estado de asistencia,Punto de verificación de asistencia,Nombre personalizado,Fuente de datos,Gestión de informe,Temperatura,Anormal
+'6,Diana Carmona,New Organization,2025-11-25 07:43:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-11-25 17:03:51,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-11-26 07:41:52,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-11-26 17:05:09,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-11-27 07:45:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-11-27 17:04:48,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-11-27 17:04:49,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-11-28 07:38:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-11-28 07:38:25,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-11-28 20:00:46,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-01 07:23:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-01 17:08:30,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-02 07:20:47,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-02 18:55:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-03 07:44:41,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-03 17:34:32,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-03 17:34:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-04 07:12:09,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-04 19:30:27,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-05 07:00:07,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-05 18:48:55,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-09 07:43:50,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-09 17:08:59,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-10 07:07:14,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-10 17:14:02,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-11 06:47:15,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-12 07:16:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-12 17:47:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-13 06:55:07,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-13 18:35:22,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-13 18:35:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-15 07:36:52,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-15 17:09:15,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-16 07:37:19,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-16 17:39:15,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-17 07:37:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-17 17:09:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-18 07:00:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-18 17:56:01,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-19 06:56:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-19 17:03:53,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-20 07:44:07,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-20 15:25:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-22 07:46:42,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'6,Diana Carmona,New Organization,2025-12-23 07:41:20,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-11-25 07:34:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-11-25 17:02:20,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-11-26 07:30:56,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-11-26 15:45:48,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-11-27 07:44:16,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-11-27 17:04:38,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-11-28 07:36:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-11-28 20:00:54,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-01 07:29:22,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-01 17:08:36,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-02 07:46:02,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-02 16:11:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-03 07:45:18,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-03 17:24:18,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-04 07:27:10,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-04 19:30:23,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-05 07:03:20,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-05 18:49:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-06 07:37:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-06 16:08:50,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-09 07:41:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-09 17:09:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-10 07:43:48,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-10 17:14:30,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-11 07:03:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-11 17:15:15,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-12 05:59:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-12 17:25:31,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-15 07:07:48,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-15 19:12:46,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-16 07:43:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-16 17:03:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-17 07:37:29,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-17 17:16:01,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-18 07:04:14,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-18 17:39:44,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-19 06:47:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-19 17:07:58,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-22 07:39:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'7,Ximena Urrego,New Organization,2025-12-23 07:35:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-11-25 08:10:51,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-11-25 17:00:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-11-26 12:18:16,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-11-26 16:52:59,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-11-27 08:15:17,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-11-27 16:38:58,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-11-28 07:39:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-11-28 19:57:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-11-29 06:13:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-11-29 16:42:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-01 07:56:25,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-02 07:40:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-02 18:55:30,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-03 07:58:59,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-03 17:22:02,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-04 07:54:11,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-04 19:15:38,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-05 07:08:55,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-05 18:48:44,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-09 08:11:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-09 16:37:25,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-10 08:26:17,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-10 16:45:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-11 07:35:09,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-11 16:35:32,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-12 08:08:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-12 17:30:50,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-12 17:36:09,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-13 07:44:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-13 18:36:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-15 08:05:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-15 19:13:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-16 08:15:34,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-16 14:37:36,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-17 07:55:30,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-17 16:38:54,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-18 07:52:29,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-18 18:08:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-19 07:15:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-19 16:15:47,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-20 08:42:56,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-20 15:25:42,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-22 08:01:49,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'15,Daniela Canola,New Organization,2025-12-22 16:38:22,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-11-25 08:03:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-11-25 16:07:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-11-26 16:14:58,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-11-27 16:08:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-11-28 07:56:09,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-01 08:16:13,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-01 16:10:19,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-02 08:00:07,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-02 16:01:20,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-03 17:30:04,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-04 17:06:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-05 07:58:41,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-05 16:23:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-06 07:53:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-06 16:00:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-09 08:00:10,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-09 16:00:11,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-10 16:09:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-11 16:09:55,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-12 07:56:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-12 16:02:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-15 07:39:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-15 15:58:53,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-16 07:49:04,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-16 16:11:16,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-17 16:59:18,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-18 16:00:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-19 07:51:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-19 16:01:14,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'106,Juliana Patiño,New Organization,2025-12-22 16:29:41,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-11-25 07:43:32,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-11-25 17:02:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-11-26 07:41:56,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-11-26 17:14:29,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-11-27 07:45:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-11-27 17:04:55,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-11-28 07:38:29,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-11-28 17:18:49,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-11-29 05:52:01,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-11-29 17:14:49,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-01 08:21:51,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-01 17:07:49,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-02 07:39:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-02 17:11:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-03 08:16:38,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-04 07:56:44,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-04 17:10:19,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-05 08:21:51,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-05 17:04:02,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-09 07:47:40,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-09 17:13:19,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-10 07:58:51,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-10 17:14:11,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-11 06:59:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-12 07:16:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-12 17:47:01,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-13 06:59:40,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-13 18:35:32,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-15 07:36:47,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-15 17:09:36,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-16 08:05:10,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-16 17:39:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-17 07:37:17,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-17 17:08:56,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-18 06:59:57,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-18 17:56:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-19 06:56:04,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-19 17:06:51,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-22 07:46:47,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-22 17:00:17,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'115,Taifeny Prieto,New Organization,2025-12-23 08:07:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-11-25 06:53:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-11-25 16:08:57,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-11-25 16:09:56,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-11-26 06:56:13,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-11-26 16:01:44,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-11-27 06:40:50,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-11-27 16:14:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-11-28 06:51:34,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-11-28 15:59:54,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-11-29 05:14:29,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-11-29 10:05:46,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-01 06:06:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-01 15:05:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-02 05:52:22,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-02 15:02:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-03 05:54:04,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-04 05:55:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-04 15:11:17,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-05 06:01:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-05 15:06:53,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-06 05:59:16,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-06 10:09:34,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-09 06:56:29,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-09 16:01:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-10 05:50:31,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-10 15:08:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-11 05:21:48,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-11 14:04:37,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-12 05:12:25,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-12 14:06:58,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-13 05:58:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-13 10:36:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-15 05:59:40,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-15 15:05:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-16 06:54:27,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-16 16:01:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-17 07:02:10,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-17 16:10:26,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-18 06:26:57,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-18 15:39:32,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-19 05:41:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-19 15:02:15,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-20 06:16:54,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-20 15:26:25,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-22 06:53:40,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-22 16:02:27,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'116,Nancy Sarria,New Organization,2025-12-23 06:52:41,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-11-25 07:55:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-11-25 17:02:23,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-11-26 07:52:38,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-11-26 17:00:47,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-11-28 07:51:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-11-28 17:26:15,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-11-29 07:42:56,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-11-29 17:00:38,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-01 08:04:31,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-02 07:58:26,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-02 17:15:30,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-03 08:16:14,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-03 17:19:16,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-04 07:54:48,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-04 17:18:57,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-05 07:55:46,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-05 17:03:07,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-09 07:57:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-09 17:04:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-10 07:40:25,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-10 17:10:31,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-11 06:58:15,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-11 17:13:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-12 07:26:25,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-12 17:23:04,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-13 07:51:55,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-13 17:04:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-15 07:54:09,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-15 17:02:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-16 08:00:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-16 17:02:32,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-17 07:56:18,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-17 17:15:43,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-18 07:24:48,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-18 17:39:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-19 07:17:48,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-19 17:34:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-22 07:59:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-22 17:00:48,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'118,Stefania Orrego,New Organization,2025-12-23 07:55:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-11-25 17:03:44,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-11-26 07:48:50,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-11-26 17:25:17,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-11-27 07:57:38,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-11-27 17:27:41,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-11-28 07:57:46,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-11-28 17:17:25,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-11-29 08:03:51,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-11-29 17:03:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-01 08:21:56,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-01 17:05:16,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-02 17:19:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-03 08:04:14,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-03 17:37:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-04 08:06:49,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-04 17:12:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-05 08:01:56,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-05 17:10:52,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-09 07:52:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-09 17:10:59,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-10 07:44:07,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-10 17:01:56,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-11 17:06:59,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-13 07:47:48,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-13 17:09:13,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-15 07:25:56,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-15 17:00:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-16 08:14:30,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-16 17:05:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-17 07:42:49,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-18 07:54:02,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-18 17:15:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-19 07:57:38,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-19 17:03:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-22 07:33:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-22 17:00:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'119,Maria Daniela Arboleda,New Organization,2025-12-23 07:36:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'120,Carlos Arevalo,New Organization,2025-11-26 07:51:58,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'120,Carlos Arevalo,New Organization,2025-11-27 07:49:48,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'120,Carlos Arevalo,New Organization,2025-11-27 17:08:29,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'120,Carlos Arevalo,New Organization,2025-11-28 07:35:25,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'120,Carlos Arevalo,New Organization,2025-11-29 07:49:52,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'120,Carlos Arevalo,New Organization,2025-11-29 17:06:37,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'120,Carlos Arevalo,New Organization,2025-12-01 07:50:59,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'120,Carlos Arevalo,New Organization,2025-12-02 07:56:04,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'120,Carlos Arevalo,New Organization,2025-12-03 07:53:47,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-11-25 07:28:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-11-25 17:02:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-11-26 07:30:11,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-11-26 17:28:01,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-11-27 07:22:10,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-11-27 17:07:13,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-11-28 07:26:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-11-28 17:10:46,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-11-29 08:15:13,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-11-29 17:01:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-01 07:32:16,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-01 17:03:46,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-02 07:19:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-02 17:10:51,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-03 07:19:27,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-03 17:34:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-04 07:26:09,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-04 16:29:58,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-05 07:31:40,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-05 07:32:47,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-05 17:04:58,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-06 07:36:55,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-06 17:12:47,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-09 07:42:42,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-09 17:06:29,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-10 07:22:43,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-10 17:00:40,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-11 07:16:34,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-11 07:16:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-12 07:24:43,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-15 07:26:52,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-15 07:26:53,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-16 07:22:31,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-16 16:58:47,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-17 07:19:36,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-17 17:02:15,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-18 07:34:09,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-19 07:23:32,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-19 17:02:26,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-20 07:28:53,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-20 07:31:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-20 16:41:16,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-22 07:16:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-22 16:59:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'122,yoheli palacio,New Organization,2025-12-23 07:25:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-11-25 07:37:48,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-11-25 17:01:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-11-26 07:41:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-11-26 17:01:11,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-11-27 07:46:22,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-11-27 17:04:42,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-11-28 07:36:49,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-11-28 17:17:53,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-11-29 05:44:14,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-11-29 17:14:07,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-01 07:45:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-01 17:06:01,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-02 07:21:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-02 18:55:19,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-03 07:42:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-03 17:24:14,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-04 07:40:31,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-04 17:06:47,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-05 07:42:44,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-05 17:03:18,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-06 07:37:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-06 17:22:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-09 07:47:14,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-09 17:05:34,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-10 06:56:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-10 17:03:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-11 06:47:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-11 17:06:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-12 06:40:42,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-12 17:01:49,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-15 07:10:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-15 19:13:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-16 07:45:34,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-16 17:00:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-17 07:40:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-17 17:07:47,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-18 06:35:13,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-18 17:55:57,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-19 06:42:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-19 16:11:30,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-22 07:54:23,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-22 17:00:13,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'123,Victor bozon,New Organization,2025-12-23 07:42:11,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-11-25 08:01:04,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-11-25 17:05:11,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-11-26 07:58:18,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-11-26 17:00:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-11-27 07:59:01,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-11-27 17:01:02,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-11-28 07:59:25,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-11-28 17:24:30,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-01 07:58:49,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-01 17:04:11,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-02 08:00:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-02 17:02:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-03 08:16:01,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-03 17:34:47,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-04 08:00:02,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-04 17:10:04,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-05 07:59:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-05 17:32:42,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-06 07:56:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-06 17:20:52,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-09 17:07:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-10 08:04:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-10 17:10:18,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-11 08:01:14,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-11 17:13:47,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-12 08:01:16,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-12 17:20:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-15 07:59:43,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-15 17:00:42,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-16 07:59:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-16 17:18:22,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-17 07:58:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-17 17:15:52,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-18 07:58:59,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-18 17:15:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-19 07:52:37,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-19 17:41:40,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-20 07:56:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-20 15:26:29,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-22 07:59:13,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'127,YULI PARODI,New Organization,2025-12-22 17:00:37,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-11-25 07:55:40,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-11-25 08:01:16,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-11-25 17:04:09,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-11-26 07:55:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-11-26 17:01:14,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-11-27 07:54:30,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-11-27 17:08:18,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-11-28 07:44:23,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-11-28 17:07:41,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-01 07:58:11,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-01 17:04:14,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-02 08:05:23,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-02 17:07:51,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-03 17:22:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-04 17:06:38,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-05 07:58:44,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-05 17:25:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-06 07:55:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-09 07:54:43,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-10 08:05:17,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-10 17:01:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-11 07:57:29,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-11 17:15:04,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-12 07:54:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-12 17:13:07,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-15 07:48:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-15 17:02:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-15 17:03:09,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-16 07:54:53,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-16 17:00:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-17 07:56:22,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-18 07:57:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-19 08:00:52,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-19 17:27:46,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-20 07:45:18,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-22 07:50:46,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-23 07:48:54,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'130,Milagro coba,New Organization,2025-12-23 07:52:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-11-25 07:58:40,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-11-25 17:01:29,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-11-26 08:05:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-11-26 17:00:30,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-11-27 07:46:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-11-27 17:05:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-11-28 08:00:16,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-11-28 17:03:46,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-11-29 07:50:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-11-29 17:00:26,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-09 08:19:42,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-09 17:04:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-10 08:06:40,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-10 17:01:55,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-11 08:11:20,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-11 17:00:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-12 08:09:10,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-12 17:00:38,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-13 07:59:20,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-13 17:01:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-15 08:03:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-15 17:00:32,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-16 07:59:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-16 17:00:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-17 07:51:57,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-17 17:00:13,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-18 07:57:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-18 17:02:13,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-19 07:57:31,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-19 17:00:09,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-22 07:59:17,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-22 17:00:26,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'131,Juan Murcia,New Organization,2025-12-23 07:55:46,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-11-25 07:46:07,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-11-25 17:13:37,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-11-26 07:32:45,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-11-26 17:03:53,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-11-27 07:48:10,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-11-27 17:26:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-11-28 08:04:07,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-11-28 17:20:11,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-01 07:54:02,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-01 17:17:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-02 07:46:10,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-02 17:16:44,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-03 07:40:14,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-03 17:20:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-04 17:03:41,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-05 07:47:37,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-05 17:14:18,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-06 07:46:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-06 17:10:25,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-09 07:48:54,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-09 17:13:36,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-10 07:40:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-10 17:12:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-11 07:45:43,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-11 17:12:00,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-12 07:36:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-12 17:18:29,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-15 17:17:38,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-16 07:50:32,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-16 17:13:03,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-17 07:38:04,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-17 17:27:46,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-18 07:52:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-18 17:21:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-19 07:11:23,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-19 17:15:55,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-20 16:13:36,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-22 07:42:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-22 17:15:23,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'133,Estefania Romo Medina,New Organization,2025-12-23 08:00:30,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-11-25 07:48:15,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-11-25 17:02:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-11-26 07:46:52,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-11-26 17:01:18,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-11-27 07:48:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-11-28 07:45:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-11-28 17:20:29,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-11-29 07:49:23,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-11-29 17:00:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-01 07:45:07,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-01 17:05:09,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-02 07:45:59,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-02 17:10:56,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-03 07:42:14,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-03 17:26:36,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-04 07:46:08,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-04 17:10:09,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-05 08:30:37,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-05 17:02:53,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-06 07:45:55,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-06 17:20:46,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-09 07:44:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-09 17:08:02,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-10 07:46:51,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-10 17:06:42,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-11 07:35:32,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-11 17:20:10,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-12 07:36:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-12 17:20:28,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-13 07:40:10,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-13 17:11:49,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-16 07:50:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-16 17:19:32,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-17 07:37:54,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-17 17:00:19,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-18 07:45:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-18 17:41:20,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-19 07:44:57,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-19 17:40:42,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-22 07:46:51,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-22 17:08:27,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'136,Naslhy Álvarez,New Organization,2025-12-23 08:00:32,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-11-25 08:04:15,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-11-25 17:36:02,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-11-26 08:04:26,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-11-26 18:00:07,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-11-27 08:00:19,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-11-27 17:51:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-11-28 07:58:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-11-28 18:03:21,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-11-29 07:58:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-11-29 17:13:38,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-01 08:02:34,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-01 18:04:56,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-02 08:02:31,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-02 18:04:30,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-03 07:58:31,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-03 18:03:33,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-04 18:01:17,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-05 07:29:10,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-05 18:32:12,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-06 08:00:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-06 18:00:48,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-09 07:58:41,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-09 18:00:13,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-10 06:50:30,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-10 18:02:05,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-11 06:56:43,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-11 19:17:07,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-12 06:54:24,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-12 18:03:19,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-13 06:46:06,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-13 19:00:59,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-15 06:59:27,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-15 18:13:54,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-16 07:01:35,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-16 18:00:01,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-17 06:59:16,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-17 17:55:41,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-18 07:02:27,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-18 18:15:41,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-19 07:56:32,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-19 17:56:39,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-20 07:46:49,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-
+'137,Javier Ortega,New Organization,2025-12-20 16:40:54,Nada,DHI_Door1_Entrance Card Reader1,-,Registro de deslizamiento de tarjeta,-,-,-

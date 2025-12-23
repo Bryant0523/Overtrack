@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reporte de horas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6">
+
+  <h1 class="text-2xl font-bold mb-4">
+    Reporte de horas – Sede {{ sede | capitalize }}
+  </h1>
+
+  <div class="overflow-x-auto bg-white rounded-xl shadow">
+    <table class="min-w-full text-sm text-left border-collapse">
+
+      <thead class="bg-gray-200 text-gray-700">
+        <tr>
+          {% for col in columnas %}
+            <th class="px-3 py-2 border">{{ col.replace('_', ' ').title() }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for fila in filas %}
+          <tr class="border-b hover:bg-gray-50">
+
+            {% for col in columnas %}
+              {% set valor = fila[col] %}
+
+              {# 🔴 TARDANZA #}
+              {% if col == 'tardanza' and valor != '00h 00m' %}
+                <td class="px-3 py-2 text-red-600 font-semibold">
+                  {{ valor }}
+                </td>
+
+              {# 🟢 HORAS EXTRA #}
+              {% elif col == 'horas_extra' and valor != '00h 00m' %}
+                <td class="px-3 py-2 text-green-600 font-semibold">
+                  {{ valor }}
+                </td>
+
+              {# ⚠️ OBSERVACIONES #}
+              {% elif col == 'observaciones' and valor %}
+                <td class="px-3 py-2 text-yellow-700">
+                  {{ valor }}
+                </td>
+
+              {% else %}
+                <td class="px-3 py-2">
+                  {{ valor }}
+                </td>
+              {% endif %}
+
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+  </div>
+
+</body>
+</html>
