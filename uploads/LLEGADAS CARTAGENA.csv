@@ -1,0 +1,296 @@
+Person ID,Name,Department,Time,Attendance Status,Attendance Check Point,Custom Name,Data Source,Handling Type,Temperature,Abnormal
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-01 08:44:09,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-01 18:49:54,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-02 08:38:43,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-02 17:48:33,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-03 08:37:59,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-03 17:59:12,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-04 09:38:11,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-04 18:01:32,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-05 08:26:42,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-05 18:10:00,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-06 07:40:02,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-06 14:14:38,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-09 09:10:35,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-09 18:00:02,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-10 08:59:03,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-10 18:02:11,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-11 08:58:26,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-11 18:20:56,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-12 08:56:45,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-12 17:51:43,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-13 07:59:34,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-13 14:31:42,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-15 08:06:25,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-15 18:48:06,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-16 09:09:18,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-16 18:18:28,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-18 08:02:58,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-18 18:36:07,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-19 08:04:16,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-19 18:06:20,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-20 07:27:25,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-20 15:02:58,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-22 08:51:21,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-22 19:03:33,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-23 08:08:17,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-23 18:30:38,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-27 08:17:01,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-27 16:58:24,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-29 08:32:53,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-29 18:40:28,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'2,ANA YELICE HENRIQUEZ CONEO,DHI,2025-12-30 07:54:40,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-01 08:50:15,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-01 08:58:10,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-01 17:43:33,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-02 08:47:36,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-02 17:30:05,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-03 08:57:21,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-03 17:31:07,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-04 08:49:54,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-04 17:40:01,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-05 11:54:44,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-05 17:38:59,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-06 07:49:07,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-06 13:35:22,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-09 08:55:22,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-09 17:30:05,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-10 08:54:53,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-10 17:31:27,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-11 08:54:04,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-11 17:53:30,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-12 08:54:46,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-12 17:30:41,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-13 07:51:07,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-13 14:33:50,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-15 08:54:05,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-15 17:43:14,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-16 09:19:11,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-16 17:32:13,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-17 08:52:54,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-17 17:43:12,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-18 08:47:26,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-18 17:36:34,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-19 08:51:48,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-19 17:39:04,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-22 08:51:49,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-23 08:38:15,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-23 18:01:07,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-27 08:18:54,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-27 15:29:19,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-27 15:32:57,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-29 08:54:28,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-29 17:45:50,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'4,ROSA SOFIA BOLAÑO SIERRA,DHI,2025-12-30 08:42:56,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-01 08:49:58,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-01 18:03:52,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-02 09:03:23,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-02 17:47:05,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-03 08:40:57,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-03 17:33:22,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-04 10:47:29,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-04 17:37:23,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-05 09:09:24,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-05 17:40:45,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-06 07:40:14,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-06 13:31:58,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-09 09:01:45,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-09 17:40:07,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-10 08:53:12,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-10 17:58:25,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-11 08:57:34,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-11 16:07:04,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-12 08:46:19,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-12 17:32:21,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-13 07:51:19,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-13 14:32:11,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-15 08:49:27,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-15 17:43:18,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-16 09:04:01,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-16 17:34:38,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-17 09:01:38,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-17 17:31:06,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-18 09:08:42,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-18 17:40:15,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-19 10:53:02,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-19 17:58:28,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-20 07:47:26,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-20 14:43:41,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-22 08:29:56,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-22 18:18:10,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-23 07:50:04,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-23 18:02:33,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-27 08:05:56,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-27 15:29:12,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-29 12:17:32,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-29 18:00:03,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'5,JENIFER PAOLA MARTINEZ LEONES,DHI,2025-12-30 09:05:18,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-01 08:49:00,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-01 17:44:04,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-02 08:47:26,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-02 17:30:10,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-03 08:56:44,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-03 17:31:34,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-04 07:05:28,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-04 17:37:42,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-05 11:53:45,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-05 17:35:16,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-06 07:48:08,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-06 13:39:59,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-09 08:55:16,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-09 17:30:15,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-10 08:54:05,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-10 17:31:56,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-11 07:10:23,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-11 17:57:24,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-12 07:02:00,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-12 17:30:52,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-13 07:50:49,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-13 14:34:04,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-15 06:59:38,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-15 17:39:51,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-17 08:52:46,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-17 13:02:06,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-18 08:46:52,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-18 17:37:41,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-19 08:51:20,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-19 17:39:14,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-20 07:57:49,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-20 14:37:08,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-22 06:56:47,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-22 18:13:34,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-23 06:55:32,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-23 18:01:47,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-27 06:10:43,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-27 16:57:59,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-29 09:03:40,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-29 17:45:56,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'7,TATIANA MARIA RIVERO CASTAÑO,DHI,2025-12-30 08:29:56,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-01 07:51:36,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-01 16:33:49,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-02 07:42:06,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-02 16:32:10,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-03 09:32:27,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-03 16:31:35,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-04 07:39:43,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-04 16:31:54,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-05 08:18:54,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-05 16:37:15,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-06 06:53:23,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-06 13:39:48,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-09 07:40:25,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-09 16:31:24,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-10 07:38:24,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-10 16:32:37,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-11 07:37:45,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-11 18:00:11,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-12 07:38:55,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-12 16:36:33,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-13 06:45:36,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-13 14:30:13,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-15 07:44:13,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-15 16:32:20,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-16 07:45:36,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-16 16:31:29,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-17 07:50:00,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-17 16:34:12,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-18 07:41:58,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-18 16:33:53,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-19 07:53:29,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-19 16:33:10,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-20 06:56:14,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-20 14:36:45,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-22 07:41:54,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-22 17:18:35,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-23 07:40:45,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-23 17:13:14,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-27 06:43:04,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-27 15:05:49,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-29 07:45:43,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-29 17:09:51,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'8,NELCY CARBONELL BELEÑO,DHI,2025-12-30 07:42:41,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-01 08:25:53,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-01 18:02:58,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-02 08:35:14,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-02 17:45:53,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-04 08:40:50,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-04 17:37:01,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-05 09:45:51,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-05 17:30:48,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-06 07:55:52,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-06 13:31:01,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-09 09:22:05,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-09 17:32:56,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-10 08:39:24,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-10 08:43:41,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-10 17:34:47,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-11 08:46:29,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-11 17:58:59,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-12 08:41:10,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-12 17:31:18,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-13 07:55:39,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-13 14:30:03,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-15 08:51:28,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-15 17:42:07,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-16 08:52:30,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-16 17:33:28,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-17 08:37:27,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-17 17:34:09,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-18 08:48:39,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-18 17:37:52,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-19 08:55:22,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-19 17:35:00,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-20 07:50:55,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-20 14:20:47,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-20 14:23:40,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-22 08:13:24,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-22 18:12:51,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-23 07:57:20,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-23 18:02:40,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-27 07:44:46,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-27 15:33:26,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-29 08:45:53,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-29 17:57:34,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'00000009,XIMENA ALEJANDRA ROJAS CONSUEGRA,DHI,2025-12-30 09:07:00,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-01 08:38:51,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-01 17:47:23,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-02 08:57:08,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-02 17:30:22,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-03 08:50:10,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-03 17:30:41,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-04 07:05:39,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-04 17:35:15,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-05 08:57:28,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-05 17:32:32,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-06 07:40:21,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-06 13:35:16,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-09 08:23:05,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-09 17:33:09,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-10 08:52:29,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-10 17:32:34,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-11 07:10:41,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-11 17:59:26,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-12 07:06:58,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-12 17:31:02,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-13 07:56:07,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-13 14:30:19,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-15 07:00:06,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-15 17:42:11,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-16 08:45:19,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-16 17:32:06,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-17 08:43:42,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-17 17:31:12,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-18 09:02:06,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-18 17:40:41,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-19 09:01:32,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-19 17:38:13,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-20 07:54:14,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-20 14:36:00,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-22 06:58:25,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-22 18:12:24,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-23 07:25:25,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-23 18:01:12,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-27 06:11:15,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-27 16:57:51,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-29 08:42:20,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
+'10,Luisa Cuadrado Torres,DHI,2025-12-29 18:00:36,None,admin_Door1_Entrance Card Reader1,-,Original Records,-,-,-
