@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="max-w-4xl mx-auto">
+    <div class="mb-6 flex justify-between items-center">
+        <h1 class="text-3xl font-bold brand-heading">📅 Horarios - {{ sede.capitalize() }}</h1>
+        <a href="/config/sedes" class="text-[#2b8590] hover:underline">← Volver</a>
+    </div>
+
+    <div class="brand-card rounded-3xl shadow-lg p-8">
+        <form method="POST">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {% for dia, horas in horario.items() %}
+                <div class="border rounded-3xl p-6 hover:shadow-xl transition">
+                    <h3 class="font-bold text-lg mb-4 text-[#2b8590]">{{ dia }}</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium brand-heading mb-2">
+                                Entrada
+                            </label>
+                            <input type="time" name="{{ dia }}_entrada" value="{{ horas.entrada }}"
+                                class="w-full brand-input rounded-xl px-4 py-2 focus:ring-2 focus:ring-[#60b5b3] outline-none"
+                                required />
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium brand-heading mb-2">
+                                Salida
+                            </label>
+                            <input type="time" name="{{ dia }}_salida" value="{{ horas.salida }}"
+                                class="w-full brand-input rounded-xl px-4 py-2 focus:ring-2 focus:ring-[#60b5b3] outline-none"
+                                required />
+                        </div>
+
+                        <div class="bg-[#f9f8f7] rounded-2xl p-3 text-sm brand-text-muted">
+                            <strong>Duración:</strong> 
+                            {% set entrada_h, entrada_m = horas.entrada.split(':') %}
+                            {% set salida_h, salida_m = horas.salida.split(':') %}
+                            {% set horas_total = (salida_h|int - entrada_h|int) + ((salida_m|int - entrada_m|int) / 60) %}
+                            {{ "%.1f" % horas_total }} horas
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="inline-flex items-center gap-2 text-sm">
+                                <input type="checkbox" name="{{ dia }}_descontar"
+                                    {% if horas.get('descontar_almuerzo', true) %}checked{% endif %}
+                                    class="h-4 w-4 text-[#2b8590] rounded" />
+                                <span class="brand-text-muted">Descontar almuerzo (1h) si no marcan</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="mt-8 flex justify-end gap-4">
+                <a href="/config/sedes"
+                    class="brand-button-secondary hover:bg-[#60b5b3] text-[#1d5e65] px-6 py-3 rounded-xl font-medium transition">
+                    Cancelar
+                </a>
+                <button type="submit"
+                    class="brand-button hover:bg-[#1d5e65] text-white px-6 py-3 rounded-xl font-medium transition">
+                    💾 Guardar cambios
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="brand-panel rounded-3xl p-4 mt-6">
+        <p class="text-sm brand-text-muted">
+            <strong>💡 Tip:</strong> Los cambios se guardarán automáticamente en la configuración del sistema.
+            Los empleados verán estos horarios actualizado en sus próximos cálculos.
+        </p>
+    </div>
+</div>
+
+{% endblock %}

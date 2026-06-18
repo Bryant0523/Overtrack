@@ -1,86 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logotipo.png') }}">
 
     <title>{{ title if title else "Overtrack" }}</title>
+
+    <style>
+        :root {
+            --tile-blue: #2b8590;
+            --aqua-wash: #6ec2bd;
+            --deep-teal: #1d5e65;
+            --mint: #60b5b3;
+            --navy: #2a405e;
+            --soft-white: #f9f8f7;
+            --dark-gray: #1d1d1b;
+            --muted-gray: #5e6d76;
+            --surface: #eef7f8;
+            --surface-strong: #d3edee;
+        }
+
+        body {
+            background: linear-gradient(180deg, var(--soft-white) 0%, var(--surface) 100%);
+            color: var(--dark-gray);
+        }
+
+        .nav-bg {
+            background: linear-gradient(90deg, var(--navy), var(--tile-blue));
+        }
+
+        .nav-link,
+        .nav-button {
+            color: rgba(249, 248, 247, 0.95);
+        }
+
+        .nav-link:hover,
+        .nav-button:hover {
+            background: rgba(110, 194, 189, 0.16);
+            color: #ffffff;
+        }
+
+        .brand-card {
+            background: white;
+            border: 1px solid rgba(43, 133, 144, 0.12);
+            box-shadow: 0 12px 30px rgba(43, 133, 144, 0.08);
+        }
+
+        .brand-panel {
+            background: linear-gradient(180deg, rgba(110, 194, 189, 0.14), rgba(43, 133, 144, 0.06));
+            border: 1px solid rgba(43, 133, 144, 0.14);
+        }
+
+        .brand-button {
+            background-color: var(--tile-blue);
+            color: white;
+        }
+
+        .brand-button:hover {
+            background-color: var(--deep-teal);
+        }
+
+        .brand-secondary {
+            background-color: var(--aqua-wash);
+            color: var(--navy);
+        }
+
+        .brand-heading {
+            color: var(--navy);
+        }
+
+        .brand-text-muted {
+            color: var(--muted-gray);
+        }
+
+        .brand-input {
+            border-color: rgba(43, 133, 144, 0.2);
+        }
+
+        .brand-table thead {
+            background-color: rgba(43, 133, 144, 0.12);
+        }
+
+        .brand-table tbody tr:nth-child(even) {
+            background-color: rgba(110, 194, 189, 0.06);
+        }
+
+        .brand-table th,
+        .brand-table td {
+            border-color: rgba(43, 133, 144, 0.08);
+        }
+
+        .brand-panel {
+            background-color: rgba(110, 194, 189, 0.12);
+            border: 1px solid rgba(43, 133, 144, 0.12);
+        }
+
+        .brand-alert-success {
+            background-color: rgba(96, 181, 179, 0.16);
+            color: var(--navy);
+        }
+
+        .brand-alert-danger {
+            background-color: rgba(255, 77, 79, 0.14);
+            color: #b91c1c;
+        }
+
+        .brand-alert-warning {
+            background-color: rgba(237, 137, 54, 0.14);
+            color: #92400e;
+        }
+
+        .brand-surface {
+            background-color: white;
+            border: 1px solid rgba(43, 133, 144, 0.12);
+            box-shadow: 0 16px 40px rgba(43, 133, 144, 0.08);
+        }
+
+        .brand-button-secondary {
+            background-color: var(--aqua-wash);
+            color: var(--navy);
+        }
+
+        .brand-button-secondary:hover {
+            background-color: var(--mint);
+        }
+
+        .brand-outline {
+            border-color: rgba(43, 133, 144, 0.3);
+            color: var(--navy);
+        }
+
+        .brand-outline:hover {
+            background-color: rgba(110, 194, 189, 0.12);
+        }
+
+        .brand-surface-soft {
+            background-color: rgba(249, 248, 247, 0.9);
+        }
+
+        .badge-primary {
+            background-color: rgba(110, 194, 189, 0.2);
+            color: var(--navy);
+        }
+    </style>
 </head>
-<body>
-    <nav class="relative bg-gray-800">
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div class="relative flex h-16 items-center justify-between">
-                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                    <!-- Mobile menu button-->
-                    <button type="button" command="--toggle" commandfor="mobile-menu"
-                        class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
-                        <span class="absolute -inset-0.5"></span>
-                        <span class="sr-only">Open main menu</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-                            aria-hidden="true" class="size-6 in-aria-expanded:hidden">
-                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-                            aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
-                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                    <div class="flex shrink-0 items-center">
-                        <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                            alt="Your Company" class="h-8 w-auto" />
-                    </div>
-                    <div class="hidden sm:ml-6 sm:block">
-                        <div class="flex space-x-4">
-                            
-                            <a href="/"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Inicio</a>
-                            <a href="/horarios"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Horarios</a>
-                            <!-- <a href="#"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a> -->
+
+<body class="min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 nav-bg shadow-lg backdrop-blur-lg">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="h-16 flex justify-between items-center">
+
+                <div class="flex items-center gap-10">
+
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1d5e65] via-[#2b8590] to-[#60b5b3] flex items-center justify-center shadow-2xl overflow-hidden border border-white/20">
+                            <img src="{{ url_for('static', filename='Img/icon.png') }}" alt="Overtrack logo" class="w-10 h-10 object-contain">
+                        </div>
+
+                        <div>
+                            <h1 class="text-white font-extrabold text-xl tracking-tight">
+                                Overtrack
+                            </h1>
+
+                            <p class="text-xs brand-text-muted">
+                                Control de horarios
+                            </p>
                         </div>
                     </div>
+
+                    <div class="hidden md:flex gap-3">
+
+                        <a href="/" class="px-4 py-2 rounded-lg nav-link nav-button transition">
+                            Inicio
+                        </a>
+
+                        <!-- <a href="/permisos" class="px-4 py-2 rounded-lg nav-link nav-button transition">
+                            Permisos
+                        </a> -->
+
+                        <a href="/tabla_resultados" class="px-4 py-2 rounded-lg nav-link nav-button transition">
+                            Resumen
+                        </a>
+
+
+                        <a href="/config/dashboard" class="px-4 py-2 rounded-lg nav-link nav-button transition">
+                            📈 Gráficos
+                        </a>
+
+                        <a href="/limpiar" class="px-4 py-2 rounded-lg nav-link nav-button transition">
+                            Limpiar
+                        </a>
+                        <a href="/config/login" class="px-4 py-2 rounded-lg nav-link nav-button transition">
+                            ⚙️ Configuraciones
+                        </a>
+                    </div>
+
                 </div>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <button type="button"
-                        class="relative rounded-full p-1 text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">View notifications</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-                            aria-hidden="true" class="size-6">
-                            <path
-                                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
-                                stroke-linecap="round" stroke-linejoin="round" />
+
+                <div class="flex items-center gap-4">
+
+                    <button class="relative text-gray-300 hover:text-white">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 17h5l-1.4-1.4A2 2 0 0118 14.2V11a6 6 0 10-12 0v3.2c0 .5-.2 1-.6 1.4L4 17h5m6 0v1a3 3 0 11-6 0v-1">
+                            </path>
+
                         </svg>
+
                     </button>
 
-                    <!-- Profile dropdown -->
-                    <el-dropdown class="relative ml-3">
-                        <p class="text-white">Hola, Bienvenido!!</p>
-                    </el-dropdown>
+                    <div class="badge-primary px-4 py-2 rounded-full text-sm">
+                        Hola, Bienvenido
+                    </div>
+
                 </div>
+
             </div>
+
         </div>
 
-        <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
-            <div class="space-y-1 px-2 pt-2 pb-3">
-                <a href="#" aria-current="page"
-                    class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Dashboard</a>
-                <a href="#"
-                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
-                <a href="#"
-                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
-                <a href="#"
-                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
-            </div>
-        </el-disclosure>
     </nav>
-    <main>
-        {% block content %}{% endblock %}
+
+    <main class="max-w-7xl mx-auto px-6 py-8">
+        {% block content %}
+        {% endblock %}
     </main>
+
 </body>
+
 </html>

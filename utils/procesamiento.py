@@ -1,207 +1,245 @@
 # procesamiento.py
+import json
+import os
 import pandas as pd
 from datetime import datetime, timedelta
 
 # -------------------------
-# HORARIOS (por sede y por día) - aquí defines las sedes y sus horarios por día
+# HORARIOS (por sede y por día)
 # -------------------------
-HORARIOS_SEDES = {
-    "medellin": {
-        "Lunes": {"entrada": "08:00", "salida": "17:00"},
-        "Martes": {"entrada": "08:00", "salida": "17:00"},
-        "Miércoles": {"entrada": "08:00", "salida": "17:00"},
-        "Jueves": {"entrada": "08:00", "salida": "17:00"},
-        "Viernes": {"entrada": "08:00", "salida": "17:00"},
-        "Sábado": {"entrada": "08:00", "salida": "17:00"},
-    },
-    "barranquilla": {
-        "Lunes": {"entrada": "08:00", "salida": "17:00"},
-        "Martes": {"entrada": "08:00", "salida": "17:00"},
-        "Miércoles": {"entrada": "08:00", "salida": "17:00"},
-        "Jueves": {"entrada": "08:00", "salida": "17:00"},
-        "Viernes": {"entrada": "08:00", "salida": "16:00"},
-        "Sábado": {"entrada": "09:00", "salida": "14:00"},
-    },
-    "cartagena": {
-        "Lunes": {"entrada": "09:00", "salida": "17:30"},
-        "Martes": {"entrada": "09:00", "salida": "17:30"},
-        "Miércoles": {"entrada": "09:00", "salida": "17:30"},
-        "Jueves": {"entrada": "09:00", "salida": "17:30"},
-        "Viernes": {"entrada": "09:00", "salida": "17:30"},
-        "Sábado": {"entrada": "09:00", "salida": "15:00"},
+
+def cargar_empleados():
+    """Carga la lista de empleados desde config/empleados.json"""
+    ruta_config = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "..", "config", "empleados.json")
+    )
+    if os.path.exists(ruta_config):
+        try:
+            with open(ruta_config, encoding="utf-8") as archivo:
+                return json.load(archivo)
+        except Exception:
+            pass
+    return []
+
+
+def guardar_empleados(empleados_list):
+    """Guarda la lista de empleados en config/empleados.json"""
+    ruta_config = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "..", "config", "empleados.json")
+    )
+    try:
+        with open(ruta_config, "w", encoding="utf-8") as archivo:
+            json.dump(empleados_list, archivo, ensure_ascii=False, indent=2)
+        return True
+    except Exception:
+        return False
+
+
+def agregar_empleado(nombre):
+    """Agrega un empleado a la lista si no existe"""
+    empleados = cargar_empleados()
+    if nombre not in empleados:
+        empleados.append(nombre)
+        guardar_empleados(empleados)
+    return empleados
+
+
+def cargar_horarios():
+    ruta_config = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "..", "config", "sedes.json")
+    )
+    if os.path.exists(ruta_config):
+        try:
+            with open(ruta_config, encoding="utf-8") as archivo:
+                return json.load(archivo)
+        except Exception:
+            pass
+
+    return {
+        "medellin": {
+            "Lunes":     {"entrada": "08:00", "salida": "17:00"},
+            "Martes":    {"entrada": "08:00", "salida": "17:00"},
+            "Miércoles": {"entrada": "08:00", "salida": "17:00"},
+            "Jueves":    {"entrada": "08:00", "salida": "17:00"},
+            "Viernes":   {"entrada": "08:00", "salida": "17:00"},
+            "Sábado":    {"entrada": "08:00", "salida": "17:00"},
+        },
+        "barranquilla": {
+            "Lunes":     {"entrada": "08:00", "salida": "17:00"},
+            "Martes":    {"entrada": "08:00", "salida": "17:00"},
+            "Miércoles": {"entrada": "08:00", "salida": "17:00"},
+            "Jueves":    {"entrada": "08:00", "salida": "17:00"},
+            "Viernes":   {"entrada": "08:00", "salida": "16:00"},
+            "Sábado":    {"entrada": "09:00", "salida": "14:00"},
+        },
+        "cartagena": {
+            "Lunes":     {"entrada": "09:00", "salida": "17:30"},
+            "Martes":    {"entrada": "09:00", "salida": "17:30"},
+            "Miércoles": {"entrada": "09:00", "salida": "17:30"},
+            "Jueves":    {"entrada": "09:00", "salida": "17:30"},
+            "Viernes":   {"entrada": "09:00", "salida": "17:30"},
+            "Sábado":    {"entrada": "09:00", "salida": "15:00"},
+        }
     }
-}
+
+HORARIOS_SEDES = cargar_horarios()
 
 # -------------------------
-# MAPA DIAS (EN -> ES)
+# MAPA DÍAS (EN -> ES)
 # -------------------------
 DIAS_MAP = {
-    "Monday": "Lunes",
-    "Tuesday": "Martes",
+    "Monday":    "Lunes",
+    "Tuesday":   "Martes",
     "Wednesday": "Miércoles",
-    "Thursday": "Jueves",
-    "Friday": "Viernes",
-    "Saturday": "Sábado",
-    "Sunday": "Domingo"
+    "Thursday":  "Jueves",
+    "Friday":    "Viernes",
+    "Saturday":  "Sábado",
+    "Sunday":    "Domingo",
 }
 
 
 # -------------------------
-# Detectar columnas (nombre y fecha/hora)
-# -------------------------
-def detectar_columnas(df):
-    # Índice fijo según tu archivo del huellero
-    idx_nombre = 1  # Columna B
-    idx_fecha  = 3  # Columna D
-
-    # Validar que existan esas columnas
-    if df.shape[1] <= max(idx_nombre, idx_fecha):
-        raise ValueError("El archivo no tiene suficientes columnas para B y D")
-
-    col_nombre = df.columns[idx_nombre]
-    col_fecha  = df.columns[idx_fecha]
-
-    return col_nombre, col_fecha
-
-# Antiguo detectar_columnas (comentado)
-# def detectar_columnas(df):
-#     posibles_nombres = ['nombre', 'empleado', 'user name', 'usuario', 'person id', 'name']
-#     posibles_fechas = ['fechahora', 'hora', 'time', 'fecha', 'datetime', 'timestamp', 'marcacion', 'check']
-
-#     cols = [c.strip().lower() for c in df.columns]
-
-#     col_nombre = next((orig for orig in df.columns if any(p in orig.lower() for p in posibles_nombres)), None)
-#     col_fecha = next((orig for orig in df.columns if any(p in orig.lower() for p in posibles_fechas)), None)
-
-#     return col_nombre, col_fecha
-
-
-# -------------------------
-# Formateador de timedeltas -> "H:MM" (00:00 si es 0)
+# Helpers
 # -------------------------
 
-
-
-
-def calcular_extras(entrada_dt, salida_dt, entrada_oficial_dt, salida_oficial_dt, tardanza_td):
-    """
-    Opción A corregida con redondeo exacto.
-    """
-
-    # minutos antes de la entrada oficial
-    if entrada_dt < entrada_oficial_dt:
-        minutos_antes = (entrada_oficial_dt - entrada_dt)
-    else:
-        minutos_antes = timedelta(0)
-
-    # minutos después de la salida oficial
-    if salida_dt > salida_oficial_dt:
-        minutos_despues = (salida_dt - salida_oficial_dt)
-    else:
-        minutos_despues = timedelta(0)
-
-    # total bruto = antes + después
-    total_bruto = minutos_antes + minutos_despues
-
-    # restar tardanza
-    total_neto = total_bruto - tardanza_td
-    if total_neto < timedelta(0):
-        total_neto = timedelta(0)
-
-    # 🔥 Convertimos a minutos redondeados correctamente
-    total_min = round(total_neto.total_seconds() / 60)
-
-    # Exige mínimo 50 minutos
-    if total_min < 50:
-        return timedelta(0)
-
-    # Regresamos el valor exacto
-    return timedelta(minutes=total_min)
-
-
-
-
-def formato_hhmm(td: timedelta) -> str:
-    if not isinstance(td, timedelta):
+def formatear_hhmm(td: timedelta) -> str:
+    """Convierte timedelta a 'HHh MMm'. Retorna '00h 00m' si es 0 o negativo."""
+    if td is None or td <= timedelta(0):
         return "00h 00m"
-
-    total_min = round(td.total_seconds() / 60)  # redondea minutos
-    if total_min <= 0:
-        return "00h 00m"
-
+    total_min = int(td.total_seconds() // 60)
     h = total_min // 60
     m = total_min % 60
     return f"{h:02d}h {m:02d}m"
 
 
+def calcular_tardanza(entrada_dt: datetime, entrada_oficial_dt: datetime) -> timedelta:
+    """Tardanza = max(0, entrada_real - entrada_oficial)."""
+    diff = entrada_dt - entrada_oficial_dt
+    return diff if diff > timedelta(0) else timedelta(0)
+
+
+def calcular_extras(salida_dt: datetime, salida_oficial_dt: datetime,
+                    tardanza_td: timedelta) -> timedelta:
+    """
+    Extras = max(0, salida_real - salida_oficial - tardanza).
+    Umbral mínimo: 50 minutos. Si no llega a 50 min → 0.
+    """
+    neto = salida_dt - salida_oficial_dt - tardanza_td
+    if neto <= timedelta(0):
+        return timedelta(0)
+    if neto < timedelta(minutes=50):
+        return timedelta(0)
+    return neto
+
+
+def asignar_marcaciones(horas_ordenadas: list, fecha) -> dict:
+    """
+    Recibe una lista de objetos time ordenados cronológicamente.
+    Asigna cada marcación según su posición:
+      1ª → entrada
+      2ª → salida_almuerzo
+      3ª → regreso_almuerzo
+      4ª → salida
+    Si hay menos de 4, intenta detectar cuáles faltan.
+    Devuelve un dict con claves: entrada, salida_almuerzo, regreso_almuerzo, salida
+    (valor None si no existe esa marcación)
+    """
+    n = len(horas_ordenadas)
+
+    resultado = {
+        "entrada":          None,
+        "salida_almuerzo":  None,
+        "regreso_almuerzo": None,
+        "salida":           None,
+    }
+
+    if n == 0:
+        return resultado
+
+    if n == 1:
+        # No se puede saber mucho; se asigna como entrada si es AM, salida si es PM
+        h = horas_ordenadas[0]
+        if h.hour < 13:
+            resultado["entrada"] = h
+        else:
+            resultado["salida"] = h
+        return resultado
+
+    if n == 2:
+        # Caso más común si no marcaron almuerzo: entrada y salida
+        resultado["entrada"] = horas_ordenadas[0]
+        resultado["salida"]  = horas_ordenadas[-1]
+        return resultado
+
+    if n == 3:
+        # Falta una marcación de almuerzo; asignamos las 2 extremas como entrada/salida
+        # y el par del medio lo asignamos al que tenga sentido
+        resultado["entrada"] = horas_ordenadas[0]
+        resultado["salida"]  = horas_ordenadas[-1]
+        # El par del medio: si hay dos seguidas, la primera es salida almuerzo
+        resultado["salida_almuerzo"]  = horas_ordenadas[1]
+        resultado["regreso_almuerzo"] = None   # falta el regreso
+        return resultado
+
+    if n >= 4:
+        # Caso completo (o con marcaciones de más → tomamos 1ª y última como en/salida,
+        # 2ª y 3ª como almuerzo)
+        resultado["entrada"]          = horas_ordenadas[0]
+        resultado["salida_almuerzo"]  = horas_ordenadas[1]
+        resultado["regreso_almuerzo"] = horas_ordenadas[2]
+        resultado["salida"]           = horas_ordenadas[-1]
+        return resultado
+
+    return resultado
+
 
 # -------------------------
 # PROCESAR REGISTROS (función pública)
-# recibe DataFrame original y el nombre de la sede o el dict de horarios
 # -------------------------
-def procesar_registros(df, sede_or_horario):
+def procesar_registros(df: pd.DataFrame, sede_or_horario) -> pd.DataFrame:
     """
-    Procesa marcaciones y genera reporte con:
-    Nombre, Fecha, Día, Entrada, Salida, Horas trabajadas, Tardanza, Horas extras(Horas y minutos)
+    Procesa marcaciones del huellero y genera reporte con:
+    Nombre, Fecha, Día, Entrada, Sal. Almuerzo, Reg. Almuerzo,
+    Salida, T. Almuerzo, Horas trabajadas, Tardanza, Horas extras
     """
-    
 
     df = df.copy()
-    df.columns = [c.strip() for c in df.columns]
+    df.columns = df.columns.str.strip()
 
-    # Normalizar nombres a minúsculas sin espacios
-    df.columns = df.columns.str.strip().str.lower()
+    # ── Detectar columnas por índice fijo (col B = nombre, col D = fecha/hora) ──
+    if df.shape[1] <= 3:
+        raise ValueError("El archivo no tiene suficientes columnas (se esperan al menos 4).")
 
-    # Mapeo fijo y sencillo
-    df = df.rename(columns={
-        "nombre": "nombre",
-        "name": "nombre",
-        "user name": "nombre",
+    col_nombre = df.columns[1]   # índice B
+    col_fecha  = df.columns[3]   # índice D
 
-        "fecha_hora": "fecha_hora",
-        "hora": "fecha_hora",
-        "time": "fecha_hora",
-        "date/time": "fecha_hora",
-        "datetime": "fecha_hora",
-        "check-in/out": "fecha_hora",
-    }, errors="ignore")
+    df = df.rename(columns={col_nombre: "nombre", col_fecha: "fecha_hora"})
 
-    # Verificar que existan las 2 columnas mínimas
-    if "nombre" not in df.columns or "fecha_hora" not in df.columns:
-        raise ValueError(f"Faltan columnas requeridas. Columnas actuales: {df.columns.tolist()}")
-
-
+    # ── Parsear fechas ──
     df["__fecha_dt"] = pd.to_datetime(df["fecha_hora"], errors="coerce")
-    
     df = df.dropna(subset=["__fecha_dt"])
     df["fecha"] = df["__fecha_dt"].dt.date
-    df["hora"] = df["__fecha_dt"].dt.time
+    df["hora"]  = df["__fecha_dt"].dt.time
 
-
-    resumen = (
-        df.groupby(["nombre", "fecha"])
-          .agg(hora_entrada=("hora", "min"),
-               hora_salida=("hora", "max"),
-               marcas_count=("hora", "count"))
-          .reset_index()
-    )
-
-    filas_result = []
-
+    # ── Horario de la sede ──
     if isinstance(sede_or_horario, str):
         horario_por_dia = HORARIOS_SEDES[sede_or_horario]
     else:
         horario_por_dia = sede_or_horario
 
-    for _, row in resumen.iterrows():
-        nombre = row["nombre"]
-        fecha = row["fecha"]
-        entrada = row["hora_entrada"]
-        salida = row["hora_salida"]
-        marcas = row["marcas_count"]
+    # ── Sábado: por defecto algunas sedes no descuentan almuerzo (compatibilidad)
+    # Nota: el comportamiento preferible es leer la clave por día `descontar_almuerzo`
+    # desde la configuración de la sede (config/sedes.json). Si no existe, se
+    # mantiene la excepción histórica para Barranquilla sábado.
+    SEDES_SIN_ALMUERZO_SABADO = {"barranquilla"}
+
+    filas_result = []
+
+    # ── Iterar por persona + fecha ──
+    for (nombre, fecha), grupo in df.groupby(["nombre", "fecha"]):
 
         dia_ing = datetime.strptime(str(fecha), "%Y-%m-%d").strftime("%A")
-        dia_es = DIAS_MAP.get(dia_ing, dia_ing)
+        dia_es  = DIAS_MAP.get(dia_ing, dia_ing)
 
         if dia_es == "Domingo":
             continue
@@ -210,233 +248,166 @@ def procesar_registros(df, sede_or_horario):
         if not horario_dia:
             continue
 
-        # ============================
-        # 🚨 CASO 1: NO MARCÓ NADA
-        # ============================
-        if pd.isna(entrada) and pd.isna(salida):
+        # Ordenar todas las marcaciones del día
+        horas_dia = sorted(grupo["hora"].dropna().tolist())
+        marcas    = asignar_marcaciones(horas_dia, fecha)
+
+        entrada_t          = marcas["entrada"]
+        salida_almuerzo_t  = marcas["salida_almuerzo"]
+        regreso_almuerzo_t = marcas["regreso_almuerzo"]
+        salida_t           = marcas["salida"]
+
+        # ── Sin ninguna marcación ──
+        if entrada_t is None and salida_t is None:
             filas_result.append({
-                "Nombre": nombre,
-                "Fecha": fecha.strftime("%d/%m/%Y"),
-                "Día": dia_es,
-                "Entrada": "-:--",
-                "Salida": "-:--",
-                "Horas trabajadas": "no marcó entrada ni salida",
-                "Tardanza": "no marcó",
-                "Horas extras": "no marcó"
+                "Nombre":           nombre,
+                "Fecha":            fecha.strftime("%d/%m/%Y"),
+                "Día":              dia_es,
+                "Entrada":          "--:--",
+                "Sal. Almuerzo":    "--:--",
+                "Reg. Almuerzo":    "--:--",
+                "Salida":           "--:--",
+                "T. Almuerzo":      "--:--",
+                "Horas trabajadas": "no marcó",
+                "Tardanza":         "no marcó",
+                "Horas extras":     "no marcó",
             })
             continue
 
-               # ============================
-        # 🚨 CASO 2: SOLO UNA MARCACIÓN
-        # ============================
-        if marcas == 1:
-            hora_unica = entrada  # (entrada == salida cuando marcas=1)
-
-            # Rango oficial
-            entrada_ini = datetime.strptime("08:00", "%H:%M").time()
-            entrada_fin = datetime.strptime("13:30", "%H:%M").time()
-            salida_ini  = datetime.strptime("13:31", "%H:%M").time()
-            salida_fin  = datetime.strptime("17:00", "%H:%M").time()
-
-            # --- Clasificación por rango ---
-            if entrada_ini <= hora_unica <= entrada_fin:
-                # Es ENTRADA
-                entrada_str = hora_unica.strftime("%H:%M")
-                salida_str = "--:--"
-                msg = "no marcó salida"
-
-            elif salida_ini <= hora_unica <= salida_fin:
-                # Es SALIDA
-                entrada_str = "--:--"
-                salida_str = hora_unica.strftime("%H:%M")
-                msg = "no marcó entrada"
-
-            else:
-                # --- Hora fuera de rango → se decide por cercanía ---
-                td_unica = timedelta(hours=hora_unica.hour, minutes=hora_unica.minute)
-                td_entrada_ref = timedelta(hours=entrada_ini.hour, minutes=entrada_ini.minute)
-                td_salida_ref = timedelta(hours=salida_fin.hour, minutes=salida_fin.minute)
-
-                if abs(td_unica - td_entrada_ref) <= abs(td_unica - td_salida_ref):
-                    # Más cerca de entrada
-                    entrada_str = hora_unica.strftime("%H:%M")
-                    salida_str = "--:--"
-                    msg = "no marcó salida"
-                else:
-                    # Más cerca de salida
-                    entrada_str = "--:--"
-                    salida_str = hora_unica.strftime("%H:%M")
-                    msg = "no marcó entrada"
-
+        # ── Solo entrada, sin salida ──
+        if entrada_t is not None and salida_t is None:
             filas_result.append({
-                "Nombre": nombre,
-                "Fecha": fecha.strftime("%d/%m/%Y"),
-                "Día": dia_es,
-                "Entrada": entrada_str,
-                "Salida": salida_str,
-                "Horas trabajadas": msg,
-                "Tardanza": msg,
-                "Horas extras": msg
-            })
-            continue
-
-
-        # ============================
-        # 🚨 CASO 3: FALTA UNA MARCACIÓN AUNQUE MARCAS>=2
-        # (Extremadamente raro pero lo cubrimos)
-        # ============================
-        if pd.isna(entrada):
-            filas_result.append({
-                "Nombre": nombre,
-                "Fecha": fecha.strftime("%d/%m/%Y"),
-                "Día": dia_es,
-                "Entrada": "-:--",
-                "Salida": salida.strftime("%H:%M"),
-                "Horas trabajadas": "no marcó entrada",
-                "Tardanza": "no marcó entrada",
-                "Horas extras": "no marcó entrada"
-            })
-            continue
-
-        if pd.isna(salida):
-            filas_result.append({
-                "Nombre": nombre,
-                "Fecha": fecha.strftime("%d/%m/%Y"),
-                "Día": dia_es,
-                "Entrada": entrada.strftime("%H:%M"),
-                "Salida": "-:--",
+                "Nombre":           nombre,
+                "Fecha":            fecha.strftime("%d/%m/%Y"),
+                "Día":              dia_es,
+                "Entrada":          entrada_t.strftime("%H:%M"),
+                "Sal. Almuerzo":    salida_almuerzo_t.strftime("%H:%M") if salida_almuerzo_t else "--:--",
+                "Reg. Almuerzo":    regreso_almuerzo_t.strftime("%H:%M") if regreso_almuerzo_t else "--:--",
+                "Salida":           "--:--",
+                "T. Almuerzo":      "--:--",
                 "Horas trabajadas": "no marcó salida",
-                "Tardanza": "no marcó salida",
-                "Horas extras": "no marcó salida"
+                "Tardanza":         "no marcó salida",
+                "Horas extras":     "no marcó salida",
             })
             continue
 
-        # ✔️ CASO NORMAL: ENTRADA Y SALIDA OK
-        entrada_dt = datetime.combine(fecha, entrada)
-        salida_dt = datetime.combine(fecha, salida)
+        # ── Solo salida, sin entrada ──
+        if entrada_t is None and salida_t is not None:
+            filas_result.append({
+                "Nombre":           nombre,
+                "Fecha":            fecha.strftime("%d/%m/%Y"),
+                "Día":              dia_es,
+                "Entrada":          "--:--",
+                "Sal. Almuerzo":    "--:--",
+                "Reg. Almuerzo":    "--:--",
+                "Salida":           salida_t.strftime("%H:%M"),
+                "T. Almuerzo":      "--:--",
+                "Horas trabajadas": "no marcó entrada",
+                "Tardanza":         "no marcó entrada",
+                "Horas extras":     "no marcó entrada",
+            })
+            continue
 
-        entrada_oficial = datetime.combine(fecha, datetime.strptime(horario_dia["entrada"], "%H:%M").time())
-        salida_oficial = datetime.combine(fecha, datetime.strptime(horario_dia["salida"], "%H:%M").time())
+        # ── CASO NORMAL: tenemos entrada y salida ──
+        entrada_dt = datetime.combine(fecha, entrada_t)
+        salida_dt  = datetime.combine(fecha, salida_t)
 
-        tardanza = entrada_dt - entrada_oficial
-        if tardanza < timedelta(0):
-            tardanza = timedelta(0)
-
-        # ================================
-# ⚡ CORRECCIÓN: Descuento de almuerzo
-# ================================
-        SEDE_NO_ALMUERZO = "barranquilla"   # 👉 cambia por el nombre exacto de esa sede
-
-        horas_trab = salida_dt - entrada_dt
-
-        # Si **NO es** la sede especial -> descontar almuerzo normal
-        if sede_or_horario != SEDE_NO_ALMUERZO:
-            horas_trab -= timedelta(hours=1)
-
-        # Si sí es la sede especial -> SOLO descontar si NO es sábado
-        else:
-            if dia_es != "Sábado":   # sábado NO descuenta
-                horas_trab -= timedelta(hours=1)
-
-        # Evitar negativos
-        if horas_trab < timedelta(0):
-            horas_trab = timedelta(0)
-
-        if horas_trab < timedelta(0):
-            horas_trab = timedelta(0)
-
-        # 🔥 Aquí aplicas tu nueva función de cálculo de extras
-        extras_effect = calcular_extras(
-        entrada_dt=entrada_dt,
-        salida_dt=salida_dt,
-        entrada_oficial_dt=entrada_oficial,
-        salida_oficial_dt=salida_oficial,
-        tardanza_td=tardanza
+        entrada_oficial = datetime.combine(
+            fecha, datetime.strptime(horario_dia["entrada"], "%H:%M").time()
+        )
+        salida_oficial = datetime.combine(
+            fecha, datetime.strptime(horario_dia["salida"], "%H:%M").time()
         )
 
+        # ── Tardanza ──
+        tardanza = calcular_tardanza(entrada_dt, entrada_oficial)
+
+        # ── Tiempo de almuerzo real ──
+        tiempo_almuerzo = timedelta(0)
+        almuerzo_str = "--:--"
+
+        if salida_almuerzo_t and regreso_almuerzo_t:
+            salida_alm_dt  = datetime.combine(fecha, salida_almuerzo_t)
+            regreso_alm_dt = datetime.combine(fecha, regreso_almuerzo_t)
+            tiempo_almuerzo = regreso_alm_dt - salida_alm_dt
+            if tiempo_almuerzo < timedelta(0):
+                tiempo_almuerzo = timedelta(0)
+            almuerzo_str = formatear_hhmm(tiempo_almuerzo)
+        else:
+            # Si no hay marcaciones de almuerzo, descontar 1h fija
+            # Permitimos configurar por día si se debe descontar o no a través
+            # de la clave `descontar_almuerzo` en el horario de la sede.
+            sede_nombre = sede_or_horario if isinstance(sede_or_horario, str) else ""
+
+            # horario_dia puede contener {'entrada','salida', 'descontar_almuerzo'}
+            bandera = horario_dia.get("descontar_almuerzo", None)
+            if bandera is not None:
+                descuenta = bool(bandera)
+            else:
+                descuenta = not (dia_es == "Sábado" and sede_nombre in SEDES_SIN_ALMUERZO_SABADO)
+
+            if descuenta:
+                tiempo_almuerzo = timedelta(hours=1)
+                almuerzo_str    = "01h 00m (est.)"
+
+        # ── Horas trabajadas = (salida - entrada) - almuerzo ──
+        horas_trab = (salida_dt - entrada_dt) - tiempo_almuerzo
+        if horas_trab < timedelta(0):
+            horas_trab = timedelta(0)
+
+        # ── Horas extras ──
+        extras = calcular_extras(salida_dt, salida_oficial, tardanza)
 
         filas_result.append({
-            "Nombre": nombre,
-            "Fecha": fecha.strftime("%d/%m/%Y"),
-            "Día": dia_es,
-            "Entrada": entrada.strftime("%H:%M"),
-            "Salida": salida.strftime("%H:%M"),
-            "Horas trabajadas": formato_hhmm(horas_trab),
-            "Tardanza": formato_hhmm(tardanza),
-            "Horas extras": formato_hhmm(extras_effect)
+            "Nombre":           nombre,
+            "Fecha":            fecha.strftime("%d/%m/%Y"),
+            "Día":              dia_es,
+            "Entrada":          entrada_t.strftime("%H:%M"),
+            "Sal. Almuerzo":    salida_almuerzo_t.strftime("%H:%M") if salida_almuerzo_t else "--:--",
+            "Reg. Almuerzo":    regreso_almuerzo_t.strftime("%H:%M") if regreso_almuerzo_t else "--:--",
+            "Salida":           salida_t.strftime("%H:%M"),
+            "T. Almuerzo":      almuerzo_str,
+            "Horas trabajadas": formatear_hhmm(horas_trab),
+            "Tardanza":         formatear_hhmm(tardanza),
+            "Horas extras":     formatear_hhmm(extras),
         })
-            # ==========================================================
-    # 🔥 CALCULAR HORAS EXTRAS TOTALES POR PERSONA
-    # ==========================================================
-    
 
+    # ── Totales por persona ──
     df_resultado = pd.DataFrame(filas_result)
 
-    print("COLUMNAS DF_RESULTADO:", df_resultado.columns.tolist())
-
-
-# =======================================
-# CALCULAR TOTAL DE HORAS EXTRAS POR PERSONA
-# =======================================
+    if df_resultado.empty:
+        return df_resultado
 
     def extras_to_minutes(x):
         if isinstance(x, str) and "h" in x:
             partes = x.replace("h", "").replace("m", "").split()
-            h = int(partes[0])
-            m = int(partes[1])
-            return h * 60 + m
+            try:
+                return int(partes[0]) * 60 + int(partes[1])
+            except:
+                return 0
         return 0
-
-    # Convertir texto → minutos
-    
 
     df_resultado["extras_min"] = df_resultado["Horas extras"].apply(extras_to_minutes)
 
-    # Sumar minutos por persona
-    totales = (
-        df_resultado.groupby("Nombre")["extras_min"]
-        .sum()
-        .reset_index()
-    )
-
-    # Convertir de vuelta a formato "Hh Mm"
-    totales["total_extras_hhmm"] = totales["extras_min"].apply(
-        lambda m: f"{m//60:02d}h {m%60:02d}m"
-    )
-
-    # =======================================
-    # INSERTAR FILA TOTAL DESPUÉS DE CADA PERSONA
-    # =======================================
-
     filas_finales = []
-    for nombre, grupo in df_resultado.groupby("Nombre"):
-        # Agregar todas las filas de esa persona
+    for nombre, grupo in df_resultado.groupby("Nombre", sort=False):
         filas_finales.extend(grupo.drop(columns=["extras_min"]).to_dict("records"))
 
-        # Buscar su total
-        total_str = totales.loc[totales["Nombre"] == nombre, "total_extras_hhmm"].iloc[0]
+        total_min = grupo["extras_min"].sum()
+        total_str = f"{total_min // 60:02d}h {total_min % 60:02d}m"
 
-        # Insertar fila total
         filas_finales.append({
-            "Nombre": f"TOTAL HORAS EXTRAS ({nombre})",
-            "Fecha": "",
-            "Día": "",
-            "Entrada": "",
-            "Salida": "",
+            "Nombre":           f"TOTAL HORAS EXTRAS ({nombre})",
+            "Fecha":            "",
+            "Día":              "",
+            "Entrada":          "",
+            "Sal. Almuerzo":    "",
+            "Reg. Almuerzo":    "",
+            "Salida":           "",
+            "T. Almuerzo":      "",
             "Horas trabajadas": "",
-            "Tardanza": "",
-            "Horas extras": total_str
+            "Tardanza":         "",
+            "Horas extras":     total_str,
         })
 
-    # Convertir a DataFrame final ordenado
-    df_final = pd.DataFrame(filas_finales)
-
-    
-
-   
-    return df_final
-
-
-        
-
-
+    return pd.DataFrame(filas_finales)

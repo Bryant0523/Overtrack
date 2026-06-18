@@ -1,103 +1,194 @@
 {% extends "base.html" %}
 {% block content %}
-  
-<form method="POST" class="w-full flex items-center m-5 flex-wrap gap-6">
 
-    <!-- Selector de usuarios -->
-    <div class="flex items-center gap-3">
-        <label class="text-sm font-medium text-heading">Usuarios</label>
+<!-- Filtros -->
 
-        <select
-            class="px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
-            name="empleado">
-            <option value="">Todos</option>
-            {% for n in nombres %}
-            <option value="{{ n }}" {% if empleado_seleccionado==n %}selected{% endif %}>
-                {{ n }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
+<div class="bg-white rounded-2xl shadow-md p-6 mb-8">
 
-    <!-- Botones separados -->
-    <div class="flex items-center gap-3">
-        <button class="text-white bg-red-600 box-border border border-transparent hover:bg-bg-red-300 focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none"
-                name="accion" value="">
-            Filtrar
-        </button>
-    </div>
+    <form method="POST" class="flex flex-wrap gap-6 items-end">
 
-    <!-- Enlaces -->
-    <div class="flex items-center  gap-4">
-        <a class="text-white bg-green-500 box-border border border-transparent hover:bg-green-300 focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none"
-           href="/descargar_extras?nombre={{ empleado_seleccionado or 'todos' }}">
-            Descargar horas extras
-        </a>
+        <div>
 
-        <a class="text-white bg-blue-500 box-border border border-transparent hover:bg-blue-300 focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none"
-           href="/descargar_llegadas?nombre={{ empleado_seleccionado or 'todos' }}">
-            Descargar llegadas
-        </a>
-    </div>
+            <label class="block text-sm font-medium text-gray-600 mb-2">
+                Usuarios
+            </label>
 
-</form>
+            <select name="empleado"
+                class="border rounded-xl px-4 py-3 w-64 focus:ring-2 focus:ring-indigo-500 outline-none">
 
-<hr>
+                <option value="">Todos</option>
 
-<div class="bg-neutral-primary-soft block p-6 border rounded-lg shadow-xs">
-  <table class="w-full text-sm text-left rtl:text-right text-body border border-slate-300 rounded-lg border">
-    <thead class="text-sm text-body bg-neutral-secondary-soft border-b rounded-base border-default sticky bg-white top-0 z-10">
-      <tr>
-        {% for col in tabla[0].keys() %}
-        <th class="px-6 py-3 font-medium">{{ col }}</th>
-        {% endfor %}
-      </tr>
-    </thead>
+                {% for n in nombres %}
+                <option value="{{n}}" {% if empleado_seleccionado==n %}selected{% endif %}>
+                    {{n}}
+                </option>
+                {% endfor %}
 
-    <tbody>
-      {% for fila in tabla %}
+            </select>
 
-        {% if fila["Nombre"].startswith("TOTAL HORAS EXTRAS") %}
-        <!-- =======================================================
-             🔥 FILA ESPECIAL PARA TOTAL HORAS EXTRAS
-        ======================================================== -->
-        <tr class="bg-white-100 font-bold border-b-4 border-yellow-500">
-            {% for key, value in fila.items() %}
-                {% if loop.first %}
-                    <!-- COLUMNA QUE OCUPA TODA LA FILA -->
-                    <td class="px-6 py-3 text-lg" colspan="7">
-                        {{ value }}
-                    </td>
-                {% else %}
-                    {% if key == "Horas extras" %}
-                    <td class="px-6 py-3 text-lg text-right">
-                        {{ value }}
-                    </td>
-                    {% else %}
-                    <td class="px-6 py-3"></td>
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
-        </tr>
+        </div>
 
-        {% else %}
-        <!-- =======================================================
-             ✔ FILA NORMAL
-        ======================================================== -->
-        <tr>
-          {% for v in fila.values() %}
-          <td class="px-6 py-3 font-medium">{{ v }}</td>
-          {% endfor %}
-        </tr>
 
-        {% endif %}
+        <div class="flex gap-3">
 
-      {% endfor %}
-    </tbody>
+            <button name="accion" value=""
+                class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl shadow">
 
-  </table>
+                Filtrar
+
+            </button>
+
+            <a href="/descargar_extras?nombre={{ empleado_seleccionado or 'todos' }}"
+                class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow">
+
+                Horas extras
+
+            </a>
+
+
+            <a href="/descargar_llegadas?nombre={{ empleado_seleccionado or 'todos' }}"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow">
+
+                Llegadas
+
+            </a>
+
+        </div>
+
+    </form>
+
 </div>
 
-<br>
+
+<!-- Tabla -->
+
+<div class="bg-white rounded-2xl shadow-md overflow-hidden">
+
+    <div class="overflow-auto max-h-[75vh]">
+
+        <table class="w-full text-sm">
+
+            <thead class="bg-slate-100 sticky top-0 z-10">
+
+                <tr>
+
+                    {% for col in tabla[0].keys() %}
+                    <th class="px-6 py-4 text-left font-semibold text-gray-700 whitespace-nowrap">
+                        {{col}}
+                    </th>
+                    {% endfor %}
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                {% for fila in tabla %}
+
+                {% if fila["Nombre"].startswith("TOTAL HORAS EXTRAS") %}
+
+                <tr class="bg-yellow-100 font-bold border-l-4 border-yellow-500">
+
+                    {% set ns = namespace(first=true) %}
+
+                    {% for key,value in fila.items() %}
+
+                    {% if ns.first %}
+
+                    <td colspan="8" class="px-6 py-5 text-yellow-800">
+                        {{value}}
+                    </td>
+
+                    {% set ns.first=false %}
+
+                    {% elif key=="Tardanza" %}
+
+                    <td class="text-center text-gray-500">
+                        TOTAL
+                    </td>
+
+                    {% elif key=="Horas extras" %}
+
+                    <td class="text-green-700 font-bold">
+                        {{value}}
+                    </td>
+
+                    {% endif %}
+
+                    {% endfor %}
+
+                </tr>
+
+
+                {% else %}
+
+                <tr class="border-b hover:bg-slate-50 transition">
+
+                    {% for key,value in fila.items() %}
+
+                    {% if key=="Tardanza" and value!="00h 00m" and value!="" and value!="--:--" %}
+
+                    <td class="px-6 py-4">
+
+                        <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full font-medium">
+                            {{value}}
+                        </span>
+
+                    </td>
+
+
+                    {% elif key=="Horas extras" and value!="00h 00m" and value!="" and value!="--:--" %}
+
+                    <td class="px-6 py-4">
+
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full font-medium">
+                            {{value}}
+                        </span>
+
+                    </td>
+
+
+                    {% elif "no marcó" in value|string %}
+
+                    <td class="px-6 py-4">
+
+                        <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full italic">
+                            {{value}}
+                        </span>
+
+                    </td>
+
+
+                    {% elif key=="T. Almuerzo" and "(est.)" in value %}
+
+                    <td class="px-6 py-4 text-gray-400 italic">
+                        {{value}}
+                    </td>
+
+                    {% else %}
+
+                    <td class="px-6 py-4 text-gray-700">
+                        {{value}}
+                    </td>
+
+                    {% endif %}
+
+                    {% endfor %}
+
+                </tr>
+
+                {% endif %}
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
 
 {% endblock %}

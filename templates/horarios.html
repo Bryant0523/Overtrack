@@ -1,50 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="w-full px-8 mx-auto bg-white my-5 rounded shadow">
+<div class="w-full px-8 mx-auto brand-card my-5 rounded-3xl p-6">
 
-    <h2 class="text-2xl font-bold mb-4">Horarios de las sedes</h2>
+    <h2 class="text-2xl font-bold mb-4 brand-heading">Horarios de las sedes</h2>
 
     <div class="grid grid-cols-1 p-4 md:grid-cols-3 gap-6">
 
-        <!-- CARD: MEDELLÍN -->
-        <div class="p-5 bg-white rounded-xl shadow hover:shadow-lg transition cursor-pointer border border-gray-100">
-            <h3 class="text-xl font-semibold mb-3 text-blue-600">Medellín</h3>
-            <div class="space-y-2 text-gray-700">
-                <p><span class="font-semibold">Lunes:</span> 08:00 AM – 05:00 PM</p>
-                <p><span class="font-semibold">Martes:</span> 08:00 AM – 05:00 PM</p>
-                <p><span class="font-semibold">Miércoles:</span> 08:00 AM – 05:00 PM</p>
-                <p><span class="font-semibold">Jueves:</span> 08:00 AM – 05:00 PM</p>
-                <p><span class="font-semibold">Viernes:</span> 08:00 AM – 05:00 PM</p>
-                <p><span class="font-semibold">Sábado:</span> 08:00 AM – 05:00 PM</p>
+        {% for sede, horario in horarios.items() %}
+        <div class="p-5 rounded-3xl shadow hover:shadow-xl transition cursor-pointer border border-[#d3edee] bg-[#f9f8f7]">
+            <h3 class="text-xl font-semibold mb-3 text-[#2b8590]">{{ sede.capitalize() }}</h3>
+            <div class="space-y-2 text-[#5e6d76]">
+                {% for dia, horas in horario.items() %}
+                <p><span class="font-semibold">{{ dia }}:</span> {{ horas.entrada }} – {{ horas.salida }}</p>
+                {% endfor %}
             </div>
         </div>
-
-        <!-- CARD: CARTAGENA -->
-        <div class="p-5 bg-white rounded-xl shadow hover:shadow-lg transition cursor-pointer border border-gray-100">
-            <h3 class="text-xl font-semibold mb-3 text-blue-600">Cartagena</h3>
-            <div class="space-y-2 text-gray-700">
-                <p><span class="font-semibold">Lunes:</span> 09:00 AM – 05:30 PM</p>
-                <p><span class="font-semibold">Martes:</span> 09:00 AM – 05:30 PM</p>
-                <p><span class="font-semibold">Miércoles:</span> 09:00 AM – 05:30 PM</p>
-                <p><span class="font-semibold">Jueves:</span> 09:00 AM – 05:30 PM</p>
-                <p><span class="font-semibold">Viernes:</span> 09:00 AM – 05:30 PM</p>
-                <p><span class="font-semibold">Sábado:</span> 09:00 AM – 05:30 PM</p>
-            </div>
-        </div>
-
-        <!-- CARD: BARRANQUILLA -->
-        <div class="p-5 bg-white rounded-xl shadow hover:shadow-lg transition cursor-pointer border border-gray-100">
-            <h3 class="text-xl font-semibold mb-3 text-blue-600">Barranquilla</h3>
-            <div class="space-y-2 text-gray-700">
-                <p><span class="font-semibold">Lunes:</span> 08:00 AM – 05:00 PM</p>
-                <p><span class="font-semibold">Martes:</span> 08:00 AM – 05:00 PM</p>
-                <p><span class="font-semibold">Miércoles:</span> 08:00 AM – 05:00 PM</p>
-                <p><span class="font-semibold">Jueves:</span> 08:00 AM – 05:00 PM</p>
-                <p><span class="font-semibold">Viernes:</span> 08:00 AM – 04:00 PM</p>
-                <p><span class="font-semibold">Sábado:</span> 09:00 AM – 02:00 PM</p>
-            </div>
-        </div>
+        {% endfor %}
 
     </div>
 </div>

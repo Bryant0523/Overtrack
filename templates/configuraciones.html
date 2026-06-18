@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-8">
+        <div>
+            <h1 class="text-3xl font-bold mb-2 brand-heading">⚙️ Panel de Configuraciones</h1>
+            <p class="brand-text-muted">Gestiona sedes, horarios y empleados del sistema</p>
+        </div>
+        <a href="/config/logout"
+            class="bg-[#2a405e] hover:bg-[#1d5e65] text-white px-4 py-2 rounded-lg transition">
+            Cerrar sesión
+        </a>
+    </div>
+
+    <!-- Tarjetas de estadísticas -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="brand-card rounded-3xl p-6 border-l-4 border-[#2b8590]">
+            <h3 class="brand-text-muted text-sm font-medium">Sedes registradas</h3>
+            <p class="text-3xl font-bold text-[#2b8590] mt-2">{{ total_sedes }}</p>
+        </div>
+
+        <div class="brand-card rounded-3xl p-6 border-l-4 border-[#60b5b3]">
+            <h3 class="brand-text-muted text-sm font-medium">Empleados registrados</h3>
+            <p class="text-3xl font-bold text-[#60b5b3] mt-2">{{ total_empleados }}</p>
+        </div>
+
+        <div class="brand-card rounded-3xl p-6 border-l-4 border-[#1d5e65]">
+            <h3 class="brand-text-muted text-sm font-medium">Sistema</h3>
+            <p class="text-3xl font-bold text-[#1d5e65] mt-2">Activo</p>
+        </div>
+    </div>
+
+    <!-- Opciones principales -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Permisos (card) -->
+        <div class="brand-card rounded-3xl p-6 hover:shadow-xl transition">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-bold brand-heading">🔒 Permisos</h2>
+                <span class="bg-[#6ec2bd] text-[#1d5e65] px-3 py-1 rounded-full text-sm font-medium">{{ permisos|length if permisos is defined else 0 }}</span>
+            </div>
+            <p class="brand-text-muted mb-4">Registrar y revisar permisos por empleado y fecha.</p>
+            <a href="/permisos" class="inline-block brand-button hover:bg-[#1d5e65] text-white px-4 py-2 rounded-xl transition">Ir a formulario de permisos →</a>
+        </div>
+
+        <!-- Gestión de sedes -->
+        <div class="brand-card rounded-3xl p-6 hover:shadow-xl transition">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-bold brand-heading">🏢 Gestión de sedes</h2>
+                <span class="bg-[#2b8590]/20 text-[#2b8590] px-3 py-1 rounded-full text-sm font-medium">
+                    {{ total_sedes }}
+                </span>
+            </div>
+            <p class="brand-text-muted mb-4">Crear, editar o eliminar sedes del sistema</p>
+            <a href="/config/sedes"
+                class="inline-block brand-button hover:bg-[#1d5e65] text-white px-4 py-2 rounded-xl transition">
+                Ir a sedes →
+            </a>
+        </div>
+
+        <!-- Gestión de empleados -->
+        <div class="brand-card rounded-3xl p-6 hover:shadow-xl transition">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-bold brand-heading">👥 Empleados</h2>
+                <span class="bg-[#60b5b3]/20 text-[#1d5e65] px-3 py-1 rounded-full text-sm font-medium">
+                    {{ total_empleados }}
+                </span>
+            </div>
+            <p class="brand-text-muted mb-4">Ver lista completa de empleados cargados en el sistema</p>
+            <div class="space-y-2 max-h-48 overflow-y-auto">
+                {% for emp in empleados %}
+                <div class="text-sm brand-text-muted bg-[#f9f8f7] px-3 py-2 rounded">{{ emp }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabla de sedes con opciones -->
+    <!-- <div class="bg-white rounded-xl shadow-lg p-6 mt-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">📋 Sedes y horarios</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead class="bg-gray-100">
+                    <tr>
+                        <th class="px-4 py-3 text-left font-semibold">Sede</th>
+                        <th class="px-4 py-3 text-left font-semibold">Lunes</th>
+                        <th class="px-4 py-3 text-left font-semibold">Viernes</th>
+                        <th class="px-4 py-3 text-left font-semibold">Sábado</th>
+                        <th class="px-4 py-3 text-center font-semibold">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for sede in sedes %}
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="px-4 py-3 font-medium">{{ sede.capitalize() }}</td>
+                        <td class="px-4 py-3 text-gray-600">
+                            {% if horarios[sede] %}
+                            {{ horarios[sede].get('Lunes', {}).entrada }} – {{ horarios[sede].get('Lunes', {}).salida }}
+                            {% endif %}
+                        </td>
+                        <td class="px-4 py-3 text-gray-600">
+                            {% if horarios[sede] %}
+                            {{ horarios[sede].get('Viernes', {}).entrada }} – {{ horarios[sede].get('Viernes', {}).salida }}
+                            {% endif %}
+                        </td>
+                        <td class="px-4 py-3 text-gray-600">
+                            {% if horarios[sede] %}
+                            {{ horarios[sede].get('Sábado', {}).entrada }} – {{ horarios[sede].get('Sábado', {}).salida }}
+                            {% endif %}
+                        </td>
+                        <td class="px-4 py-3 text-center">
+                            <a href="/config/horarios/{{ sede }}"
+                                class="text-indigo-600 hover:text-indigo-800 font-medium">
+                                Ajustar →
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div> -->
+</div>
+
+{% endblock %}

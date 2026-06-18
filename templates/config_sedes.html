@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="max-w-4xl mx-auto">
+    <div class="mb-6 flex justify-between items-center">
+        <h1 class="text-3xl font-bold brand-heading">🏢 Gestión de sedes</h1>
+        <a href="/configuraciones" class="text-[#2b8590] hover:underline">← Volver</a>
+    </div>
+
+    <!-- Crear nueva sede -->
+    <div class="brand-card rounded-3xl p-6 mb-8">
+        <h2 class="text-xl font-bold mb-4 brand-heading">Crear nueva sede</h2>
+        <form method="POST" class="flex gap-4">
+            <input type="hidden" name="accion" value="crear" />
+            <input type="text" name="nombre_sede" placeholder="Nombre de la sede (ej: monterrey)"
+                class="flex-1 brand-input rounded-xl px-4 py-2 focus:ring-2 focus:ring-[#60b5b3] outline-none"
+                required />
+            <button type="submit"
+                class="brand-button hover:bg-[#1d5e65] text-white px-6 py-2 rounded-xl font-medium transition">
+                + Crear sede
+            </button>
+        </form>
+    </div>
+
+    <!-- Lista de sedes -->
+    <div class="space-y-4">
+        <h2 class="text-xl font-bold mb-4 brand-heading">Sedes existentes</h2>
+        {% if sedes %}
+        {% for sede in sedes %}
+        <div class="brand-card rounded-3xl p-4 flex justify-between items-center border-l-4 border-[#2b8590] hover:shadow-xl transition">
+            <div class="flex-1">
+                <h3 class="font-bold text-lg brand-heading">{{ sede.capitalize() }}</h3>
+                <p class="brand-text-muted text-sm">Haz clic en "Ajustar" para configurar los horarios</p>
+            </div>
+            <div class="flex gap-3">
+                <a href="/config/horarios/{{ sede }}"
+                    class="brand-button hover:bg-[#1d5e65] text-white px-4 py-2 rounded-xl transition">
+                    Ajustar horarios →
+                </a>
+                {% if sedes|length > 1 %}
+                <form method="POST" class="inline" onsubmit="return confirm('¿Eliminar esta sede?');">
+                    <input type="hidden" name="accion" value="eliminar" />
+                    <input type="hidden" name="nombre_sede" value="{{ sede }}" />
+                    <button type="submit"
+                        class="bg-[#1d5e65] hover:bg-[#2a405e] text-white px-4 py-2 rounded-xl transition">
+                        Eliminar
+                    </button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p class="brand-text-muted text-center py-8">No hay sedes registradas</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

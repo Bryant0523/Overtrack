@@ -1,6 +1,27 @@
 {
-  "medellin": { "entrada": "08:00", "salida": "17:00" },
-  "cartagena": { "entrada": "09:30", "salida": "17:30" },
-  "barranquilla": { "entrada": "08:00", "salida": "17:00" }
+  "medellin": {
+    "Lunes": { "entrada": "08:00", "salida": "17:00" },
+    "Martes": { "entrada": "08:00", "salida": "17:00" },
+    "Miércoles": { "entrada": "08:00", "salida": "17:00" },
+    "Jueves": { "entrada": "08:00", "salida": "17:00" },
+    "Viernes": { "entrada": "08:00", "salida": "17:00" },
+    "Sábado": { "entrada": "08:00", "salida": "17:00" }
+  },
+  "barranquilla": {
+    "Lunes": { "entrada": "08:00", "salida": "17:00" },
+    "Martes": { "entrada": "08:00", "salida": "17:00" },
+    "Miércoles": { "entrada": "08:00", "salida": "17:00" },
+    "Jueves": { "entrada": "08:00", "salida": "17:00" },
+    "Viernes": { "entrada": "08:00", "salida": "16:00" },
+    "Sábado": { "entrada": "09:00", "salida": "14:00" }
+  },
+  "cartagena": {
+    "Lunes": { "entrada": "09:00", "salida": "17:30" },
+    "Martes": { "entrada": "09:00", "salida": "17:30" },
+    "Miércoles": { "entrada": "09:00", "salida": "17:30" },
+    "Jueves": { "entrada": "09:00", "salida": "17:30" },
+    "Viernes": { "entrada": "09:00", "salida": "17:30" },
+    "Sábado": { "entrada": "09:00", "salida": "15:00" }
+  }
 }
 

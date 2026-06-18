@@ -1,39 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="max-w-lg mx-auto bg-white p-6 my-5 rounded shadow">
-        <h1 class="text-xl font-bold mb-4">Cargar archivo del huellero</h1>
+    <div class="max-w-lg mx-auto brand-card p-6 my-5 rounded-3xl">
+        <h1 class="text-xl font-bold mb-4 brand-heading">Cargar archivo del huellero</h1>
 
         <!-- FORMULARIO: fijate method y enctype -->
         <form id="form-subir" action="{{ url_for('subir') }}" method="POST" enctype="multipart/form-data"
             class="space-y-4">
-            <select name="sede" class="w-full border rounded p-2">
+            <select name="sede" class="w-full brand-input rounded-xl p-3 focus:ring-2 focus:ring-[#60b5b3] outline-none" required>
                 <option value="">Seleccionar sede…</option>
-                <option value="cartagena">Cartagena</option>
-                <option value="medellin">Medellín</option>
-                <option value="barranquilla">Barranquilla</option>
+                {% for sede in sedes %}
+                <option value="{{ sede }}">{{ sede.capitalize() }}</option>
+                {% endfor %}
             </select>
 
             <input type="file" name="archivo_csv" id="archivo_csv" accept=".csv,.xls,.xlsx" required
-                class="block w-full border rounded p-2" />
+                class="block w-full brand-input rounded-xl p-3" />
 
             <div class="flex gap-2">
 
-                <button
-                    class="px-4 py-2 rounded-md border border-green-300 bg-green-500 text-white text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200">
+                <button id="btn-subir"
+                    class="brand-button px-4 py-2 rounded-xl text-white text-sm transition duration-200">
                     Subir
                 </button>
                 <button id="btn-reset" type="button" onclick="document.getElementById('archivo_csv').value=''"
-                    class="px-3 py-2 border rounded">
+                    class="px-3 py-2 border border-[#2b8590] text-[#1d5e65] rounded-xl hover:bg-[#6ec2bd]/15 transition">
                     Limpiar
                 </button>
             </div>
 
-            <div id="status" class="text-sm text-gray-600 mt-2" style="display: none">
+            <div id="status" class="text-sm brand-text-muted mt-2" style="display: none">
                 Subiendo…
             </div>
         </form>
 
-        <div class="mt-4 text-sm text-red-600">
+        <div class="mt-4 text-sm text-[#d93025]">
             {% if mensaje_error %} {{ mensaje_error }} {% endif %}
         </div>
     </div>

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="min-h-[calc(100vh-100px)] flex items-center justify-center">
+    <div class="brand-card rounded-3xl p-8 w-full max-w-md">
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-bold brand-heading">⚙️ Configuraciones</h1>
+            <p class="brand-text-muted mt-2">Ingrese la contraseña para acceder</p>
+        </div>
+
+        {% if error %}
+        <div class="mb-4 p-4 rounded-lg bg-red-100 text-red-800 text-sm">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <form method="POST" class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium brand-heading mb-2">Contraseña</label>
+                <input type="password" name="password" required
+                    class="w-full brand-input rounded-xl px-4 py-3 focus:ring-2 focus:ring-[#60b5b3] outline-none"
+                    placeholder="Ingrese la contraseña" />
+            </div>
+
+            <button type="submit"
+                class="w-full brand-button hover:bg-[#1d5e65] text-white py-3 rounded-xl font-medium transition">
+                Acceder
+            </button>
+        </form>
+
+        <div class="mt-6 pt-6 border-t border-slate-200 text-center text-sm brand-text-muted">
+            <a href="/" class="text-[#2b8590] hover:underline">← Volver al inicio</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

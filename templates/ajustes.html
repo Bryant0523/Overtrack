@@ -1,13 +1,31 @@
-{% extends "base.html" %}
+﻿{% extends "base.html" %}
 {% block content %}
 
+<div class="max-w-4xl mx-auto brand-card p-6 my-5 rounded-3xl">
+    <h1 class="text-2xl font-bold mb-4 brand-heading">Ajustes del sistema</h1>
 
+    <div class="grid gap-6 md:grid-cols-2">
+        <div class="rounded-3xl border border-[#d3edee] p-4 bg-[#f9f8f7]">
+            <h2 class="text-lg font-semibold mb-3 brand-heading">Horarios cargados</h2>
+            {% for sede, horario in horarios.items() %}
+            <div class="mb-4">
+                <h3 class="font-semibold text-[#2b8590]">{{ sede.capitalize() }}</h3>
+                <ul class="list-disc list-inside text-sm brand-text-muted">
+                    {% for dia, horas in horario.items() %}
+                    <li>{{ dia }}: {{ horas.entrada }} – {{ horas.salida }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
 
-
-
-
-
-
-
+        <div class="rounded-3xl border border-[#d3edee] p-4 bg-[#f9f8f7]">
+            <h2 class="text-lg font-semibold mb-3 brand-heading">Estado de memoria</h2>
+            <p class="brand-text-muted">Permisos registrados: <strong>{{ permisos }}</strong></p>
+            <p class="brand-text-muted">Sedes disponibles: <strong>{{ sedes|length }}</strong></p>
+            <p class="brand-text-muted mt-4">Usa <strong>Limpiar</strong> en la barra de navegación para reiniciar los datos actuales.</p>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
