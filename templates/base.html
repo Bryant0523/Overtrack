@@ -2,240 +2,347 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logotipo.png') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='logotipo.png') }}">
+  <title>{{ title if title else "Overtrack" }}</title>
 
-    <title>{{ title if title else "Overtrack" }}</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-    <style>
-        :root {
-            --tile-blue: #2b8590;
-            --aqua-wash: #6ec2bd;
-            --deep-teal: #1d5e65;
-            --mint: #60b5b3;
-            --navy: #2a405e;
-            --soft-white: #f9f8f7;
-            --dark-gray: #1d1d1b;
-            --muted-gray: #5e6d76;
-            --surface: #eef7f8;
-            --surface-strong: #d3edee;
-        }
+    *, *::before, *::after { box-sizing: border-box; }
 
-        body {
-            background: linear-gradient(180deg, var(--soft-white) 0%, var(--surface) 100%);
-            color: var(--dark-gray);
-        }
+    :root {
+      --ink:          #0f1923;
+      --ink-mid:      #3d4f5c;
+      --ink-soft:     #7a8e9a;
+      --ink-ghost:    #b8c5cd;
+      --surface:      #f4f6f8;
+      --surface-card: #ffffff;
+      --accent:       #00b4a6;
+      --accent-dark:  #007f76;
+      --accent-glow:  rgba(0,180,166,0.12);
+      --accent2:      #1e3a5f;
+      --accent2-light:rgba(30,58,95,0.08);
+      --danger:       #e84646;
+      --warn:         #f59e0b;
+      --success:      #16a34a;
+      --border:       rgba(0,0,0,0.07);
+      --border-strong:rgba(0,0,0,0.13);
+      --radius:       14px;
+      --radius-sm:    8px;
+      --radius-pill:  999px;
+      --shadow:       0 2px 12px rgba(0,0,0,0.07);
+      --shadow-lg:    0 8px 32px rgba(0,0,0,0.10);
+    }
 
-        .nav-bg {
-            background: linear-gradient(90deg, var(--navy), var(--tile-blue));
-        }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--surface);
+      color: var(--ink);
+      min-height: 100vh;
+      font-size: 13px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .nav-link,
-        .nav-button {
-            color: rgba(249, 248, 247, 0.95);
-        }
+    /* ── NAVBAR ── */
+    .ot-nav {
+      background: var(--accent2);
+      height: 58px;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 4px 20px rgba(0,0,0,0.18);
+    }
 
-        .nav-link:hover,
-        .nav-button:hover {
-            background: rgba(110, 194, 189, 0.16);
-            color: #ffffff;
-        }
+    .ot-nav-left  { display: flex; align-items: center; gap: 32px; }
+    .ot-nav-right { display: flex; align-items: center; gap: 12px; }
 
-        .brand-card {
-            background: white;
-            border: 1px solid rgba(43, 133, 144, 0.12);
-            box-shadow: 0 12px 30px rgba(43, 133, 144, 0.08);
-        }
+    .ot-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .ot-brand-logo {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: linear-gradient(135deg, var(--accent-dark), var(--accent), #00d4c4);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,180,166,0.35);
+    }
+    .ot-brand-logo img { width: 20px; height: 20px; object-fit: contain; }
+    .ot-brand-logo svg { width: 18px; height: 18px; }
+    .ot-brand-name { color: #fff; font-size: 15px; font-weight: 700; letter-spacing: -0.3px; line-height: 1.1; }
+    .ot-brand-sub  { color: rgba(255,255,255,0.4); font-size: 9.5px; letter-spacing: 0.6px; text-transform: uppercase; }
 
-        .brand-panel {
-            background: linear-gradient(180deg, rgba(110, 194, 189, 0.14), rgba(43, 133, 144, 0.06));
-            border: 1px solid rgba(43, 133, 144, 0.14);
-        }
+    .ot-nav-links { display: flex; gap: 2px; }
+    .ot-nav-link {
+      color: rgba(255,255,255,0.6);
+      font-size: 12.5px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+    }
+    .ot-nav-link:hover  { background: rgba(255,255,255,0.08); color: #fff; }
+    .ot-nav-link.active { background: var(--accent-glow); color: var(--accent); }
 
-        .brand-button {
-            background-color: var(--tile-blue);
-            color: white;
-        }
+    .ot-nav-pill {
+      background: rgba(0,180,166,0.18);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.2px;
+    }
 
-        .brand-button:hover {
-            background-color: var(--deep-teal);
-        }
+    .ot-nav-icon {
+      color: rgba(255,255,255,0.5);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 7px;
+      display: flex;
+      transition: background .15s, color .15s;
+    }
+    .ot-nav-icon:hover { background: rgba(255,255,255,0.08); color: #fff; }
 
-        .brand-secondary {
-            background-color: var(--aqua-wash);
-            color: var(--navy);
-        }
+    /* ── MAIN ── */
+    .ot-main {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+}
 
-        .brand-heading {
-            color: var(--navy);
-        }
+    /* ── CARDS ── */
+    .ot-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
 
-        .brand-text-muted {
-            color: var(--muted-gray);
-        }
+    /* ── BUTTONS ── */
+    .ot-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12.5px; font-weight: 600;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      border: none; cursor: pointer;
+      transition: background .15s, box-shadow .15s, transform .1s;
+      text-decoration: none; white-space: nowrap;
+      font-family: inherit;
+    }
+    .ot-btn:active { transform: scale(0.98); }
 
-        .brand-input {
-            border-color: rgba(43, 133, 144, 0.2);
-        }
+    .ot-btn-primary   { background: var(--accent); color: #fff; }
+    .ot-btn-primary:hover { background: var(--accent-dark); box-shadow: 0 4px 12px rgba(0,180,166,0.3); }
 
-        .brand-table thead {
-            background-color: rgba(43, 133, 144, 0.12);
-        }
+    .ot-btn-secondary { background: var(--surface); color: var(--ink-mid); border: 1px solid var(--border-strong); }
+    .ot-btn-secondary:hover { background: #e8edf0; }
 
-        .brand-table tbody tr:nth-child(even) {
-            background-color: rgba(110, 194, 189, 0.06);
-        }
+    .ot-btn-danger    { background: rgba(232,70,70,0.08); color: var(--danger); border: 1px solid rgba(232,70,70,0.18); }
+    .ot-btn-danger:hover { background: rgba(232,70,70,0.15); }
 
-        .brand-table th,
-        .brand-table td {
-            border-color: rgba(43, 133, 144, 0.08);
-        }
+    .ot-btn-ghost     { background: transparent; color: var(--ink-soft); border: 1px solid var(--border); }
+    .ot-btn-ghost:hover { background: var(--surface); }
 
-        .brand-panel {
-            background-color: rgba(110, 194, 189, 0.12);
-            border: 1px solid rgba(43, 133, 144, 0.12);
-        }
+    .ot-btn-navy      { background: var(--accent2); color: #fff; }
+    .ot-btn-navy:hover { background: #162d4a; }
 
-        .brand-alert-success {
-            background-color: rgba(96, 181, 179, 0.16);
-            color: var(--navy);
-        }
+    /* ── FORM INPUTS ── */
+    .ot-input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      padding: 9px 12px;
+      font-size: 12.5px;
+      color: var(--ink);
+      font-family: inherit;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .ot-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+      background: #fff;
+    }
+    .ot-input::placeholder { color: var(--ink-ghost); }
 
-        .brand-alert-danger {
-            background-color: rgba(255, 77, 79, 0.14);
-            color: #b91c1c;
-        }
+    .ot-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--ink-mid);
+      margin-bottom: 5px;
+      letter-spacing: 0.2px;
+    }
 
-        .brand-alert-warning {
-            background-color: rgba(237, 137, 54, 0.14);
-            color: #92400e;
-        }
+    /* ── BADGES ── */
+    .ot-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 10.5px; font-weight: 600;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+    .ot-badge-teal  { background: rgba(0,180,166,0.12); color: var(--accent-dark); }
+    .ot-badge-red   { background: rgba(232,70,70,0.10); color: var(--danger); }
+    .ot-badge-warn  { background: rgba(245,158,11,0.12); color: #92400e; }
+    .ot-badge-gray  { background: var(--surface); color: var(--ink-soft); border: 1px solid var(--border); }
+    .ot-badge-navy  { background: var(--accent2-light); color: var(--accent2); }
 
-        .brand-surface {
-            background-color: white;
-            border: 1px solid rgba(43, 133, 144, 0.12);
-            box-shadow: 0 16px 40px rgba(43, 133, 144, 0.08);
-        }
+    /* ── TABLE ── */
+    .ot-table-wrap {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .ot-table-head {
+      padding: 14px 18px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-card);
+    }
+    .ot-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .ot-table thead { background: var(--surface); }
+    .ot-table thead th { box-shadow: 0 1px 0 var(--border), 0 3px 8px rgba(0,0,0,0.06); }
+    .ot-table thead th {
+      padding: 9px 14px;
+      text-align: left;
+      font-size: 10px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.7px;
+      color: var(--ink-soft);
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .ot-table tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      color: var(--ink-mid);
+    }
+    .ot-table tbody tr:last-child td { border-bottom: none; }
+    .ot-table tbody tr:hover td { background: rgba(0,180,166,0.025); }
+    .ot-table .ot-row-total td {
+      background: rgba(0,180,166,0.06);
+      font-weight: 600;
+      color: var(--ink);
+      border-top: 2px solid rgba(0,180,166,0.2);
+      border-bottom: none;
+    }
 
-        .brand-button-secondary {
-            background-color: var(--aqua-wash);
-            color: var(--navy);
-        }
+    /* ── ALERTS ── */
+    .ot-alert {
+      padding: 12px 16px; border-radius: var(--radius-sm);
+      font-size: 12.5px; font-weight: 500; margin-bottom: 16px;
+    }
+    .ot-alert-success { background: rgba(22,163,74,0.1);  color: #15803d; border: 1px solid rgba(22,163,74,0.2); }
+    .ot-alert-danger  { background: rgba(232,70,70,0.08); color: var(--danger); border: 1px solid rgba(232,70,70,0.15); }
+    .ot-alert-warn    { background: rgba(245,158,11,0.1); color: #92400e; border: 1px solid rgba(245,158,11,0.2); }
 
-        .brand-button-secondary:hover {
-            background-color: var(--mint);
-        }
+    /* ── STAT CARD ── */
+    .ot-stat {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+    }
+    .ot-stat-icon {
+      width: 36px; height: 36px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px; margin-bottom: 12px;
+    }
+    .ot-stat-val   { font-size: 24px; font-weight: 700; color: var(--ink); letter-spacing: -0.5px; }
+    .ot-stat-label { font-size: 11px; color: var(--ink-soft); margin-top: 2px; }
 
-        .brand-outline {
-            border-color: rgba(43, 133, 144, 0.3);
-            color: var(--navy);
-        }
+    /* ── SIDEBAR ── */
+    .ot-sidebar-item {
+      display: flex; align-items: center; gap: 9px;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 12.5px; font-weight: 500;
+      color: var(--ink-mid);
+      text-decoration: none;
+      transition: background .15s, color .15s;
+      margin-bottom: 2px;
+    }
+    .ot-sidebar-item:hover  { background: var(--surface); color: var(--ink); }
+    .ot-sidebar-item.active { background: var(--accent-glow); color: var(--accent-dark); font-weight: 600; }
+    .ot-sidebar-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
 
-        .brand-outline:hover {
-            background-color: rgba(110, 194, 189, 0.12);
-        }
+    /* ── DIVIDER ── */
+    .ot-divider { height: 1px; background: var(--border); margin: 20px 0; }
 
-        .brand-surface-soft {
-            background-color: rgba(249, 248, 247, 0.9);
-        }
+    /* ── PAGE HEADER ── */
+    .ot-page-header { margin-bottom: 24px; }
+    .ot-page-title  { font-size: 20px; font-weight: 700; color: var(--ink); letter-spacing: -0.4px; }
+    .ot-page-sub    { font-size: 12px; color: var(--ink-soft); margin-top: 3px; }
 
-        .badge-primary {
-            background-color: rgba(110, 194, 189, 0.2);
-            color: var(--navy);
-        }
-    </style>
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--ink-ghost); }
+  </style>
 </head>
 
-<body class="min-h-screen">
+<body>
 
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-50 nav-bg shadow-lg backdrop-blur-lg">
+  <!-- NAVBAR -->
+  <nav class="ot-nav">
+    <div class="ot-nav-left">
 
-        <div class="max-w-7xl mx-auto px-6">
-
-            <div class="h-16 flex justify-between items-center">
-
-                <div class="flex items-center gap-10">
-
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1d5e65] via-[#2b8590] to-[#60b5b3] flex items-center justify-center shadow-2xl overflow-hidden border border-white/20">
-                            <img src="{{ url_for('static', filename='Img/icon.png') }}" alt="Overtrack logo" class="w-10 h-10 object-contain">
-                        </div>
-
-                        <div>
-                            <h1 class="text-white font-extrabold text-xl tracking-tight">
-                                Overtrack
-                            </h1>
-
-                            <p class="text-xs brand-text-muted">
-                                Control de horarios
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="hidden md:flex gap-3">
-
-                        <a href="/" class="px-4 py-2 rounded-lg nav-link nav-button transition">
-                            Inicio
-                        </a>
-
-                        <!-- <a href="/permisos" class="px-4 py-2 rounded-lg nav-link nav-button transition">
-                            Permisos
-                        </a> -->
-
-                        <a href="/tabla_resultados" class="px-4 py-2 rounded-lg nav-link nav-button transition">
-                            Resumen
-                        </a>
-
-
-                        <a href="/config/dashboard" class="px-4 py-2 rounded-lg nav-link nav-button transition">
-                            📈 Gráficos
-                        </a>
-
-                        <a href="/limpiar" class="px-4 py-2 rounded-lg nav-link nav-button transition">
-                            Limpiar
-                        </a>
-                        <a href="/config/login" class="px-4 py-2 rounded-lg nav-link nav-button transition">
-                            ⚙️ Configuraciones
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="flex items-center gap-4">
-
-                    <button class="relative text-gray-300 hover:text-white">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 17h5l-1.4-1.4A2 2 0 0118 14.2V11a6 6 0 10-12 0v3.2c0 .5-.2 1-.6 1.4L4 17h5m6 0v1a3 3 0 11-6 0v-1">
-                            </path>
-
-                        </svg>
-
-                    </button>
-
-                    <div class="badge-primary px-4 py-2 rounded-full text-sm">
-                        Hola, Bienvenido
-                    </div>
-
-                </div>
-
-            </div>
-
+      <a href="/" class="ot-brand">
+        <div class="ot-brand-logo">
+          {% if true %}
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="7" stroke="white" stroke-width="1.6"/>
+            <path d="M10 6.5v3.8l2.5 1.5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          {% endif %}
         </div>
+        <div>
+          <div class="ot-brand-name">Overtrack</div>
+          <div class="ot-brand-sub">Control de horarios</div>
+        </div>
+      </a>
 
-    </nav>
+      <div class="ot-nav-links">
+        <a href="/"                   class="ot-nav-link {% if request.path == '/' %}active{% endif %}">Inicio</a>
+        <a href="/tabla_resultados"   class="ot-nav-link {% if request.path == '/tabla_resultados' %}active{% endif %}">Resumen</a>
+        <a href="/config/dashboard"   class="ot-nav-link {% if request.path.startswith('/config/dashboard') %}active{% endif %}">Gráficos</a>
+        <a href="/limpiar"            class="ot-nav-link">Limpiar</a>
+        <a href="/config/login"       class="ot-nav-link {% if request.path.startswith('/config') %}active{% endif %}">Configuraciones</a>
+      </div>
 
-    <main class="max-w-7xl mx-auto px-6 py-8">
-        {% block content %}
-        {% endblock %}
-    </main>
+    </div>
+
+    <div class="ot-nav-right">
+      <button class="ot-nav-icon" title="Notificaciones">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+        </svg>
+      </button>
+      <div class="ot-nav-pill">Bienvenido</div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <main class="ot-main">
+    {% block content %}{% endblock %}
+  </main>
 
 </body>
-
 </html>

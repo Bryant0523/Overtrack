@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="max-w-4xl mx-auto">
-    <div class="mb-6 flex justify-between items-center">
-        <h1 class="text-3xl font-bold brand-heading">📅 Horarios - {{ sede.capitalize() }}</h1>
-        <a href="/config/sedes" class="text-[#2b8590] hover:underline">← Volver</a>
+<div class="max-w-5xl mx-auto">
+    <div class="mb-6 flex justify-between items-center flex-wrap gap-3">
+        <div>
+            <h1 class="text-3xl font-bold brand-heading">📅 Editar horarios</h1>
+            <p class="text-sm brand-text-muted mt-1">Sede: <strong>{{ sede.capitalize() }}</strong></p>
+        </div>
+        <div class="flex gap-2">
+            <a href="/configuraciones" class="ot-btn ot-btn-ghost" style="font-size:12px">← Configuraciones</a>
+            <a href="/config/sedes" class="ot-btn ot-btn-secondary" style="font-size:12px">Ver sedes</a>
+        </div>
     </div>
 
     <div class="brand-card rounded-3xl shadow-lg p-8">

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+﻿{% extends "base.html" %}
 {% block content %}
 
 <div class="max-w-4xl mx-auto">
@@ -7,7 +7,6 @@
         <a href="/configuraciones" class="text-[#2b8590] hover:underline">← Volver</a>
     </div>
 
-    <!-- Crear nueva sede -->
     <div class="brand-card rounded-3xl p-6 mb-8">
         <h2 class="text-xl font-bold mb-4 brand-heading">Crear nueva sede</h2>
         <form method="POST" class="flex gap-4">
@@ -22,7 +21,6 @@
         </form>
     </div>
 
-    <!-- Lista de sedes -->
     <div class="space-y-4">
         <h2 class="text-xl font-bold mb-4 brand-heading">Sedes existentes</h2>
         {% if sedes %}
