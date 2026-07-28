@@ -165,50 +165,118 @@ def calcular_extras(entrada_dt, salida_dt, entrada_oficial_dt, salida_oficial_dt
     return total_extras
 
 
+# ─────────────────────────────────────────────────────────────
+# VALIDACIÓN INDEPENDIENTE
+# ─────────────────────────────────────────────────────────────
+# IMPORTANTE: esta función YA NO vuelve a llamar calcular_extras() para
+# "comprobar" el resultado contra sí mismo (eso era tautológico: si la
+# fórmula tenía un error, la revisión SIEMPRE daba "OK" porque comparaba
+# un número contra sí mismo). En su lugar valida sobre los datos crudos
+# de marcación con reglas de sentido común, independientes de la fórmula
+# de cálculo de extras.
+
 def validar_calculo(entrada_dt, salida_dt, entrada_oficial_dt, salida_oficial_dt, tardanza_td,
-                    tiempo_almuerzo_td, horas_trab_td, extras_td, umbral_extras_minutos=30,
-                    permiso_salida_temprana=False):
-    """Valida si el cálculo de horas extras y trabajadas es coherente."""
-    horas_esperadas = (salida_dt - entrada_dt) - tiempo_almuerzo_td
-    horas_esperadas = max(horas_esperadas, timedelta(0))
+                     tiempo_almuerzo_td, horas_trab_td, extras_td,
+                     marcas_dia=None, salida_almuerzo_t=None, regreso_almuerzo_t=None, fecha=None,
+                     umbral_extras_minutos=30, permiso_salida_temprana=False):
+    """Valida el cálculo de un día con reglas independientes de la fórmula de extras."""
+    alertas = []
 
-    extras_esperados = calcular_extras(
-        entrada_dt, salida_dt, entrada_oficial_dt, salida_oficial_dt,
-        tardanza_td, umbral_extras_minutos=umbral_extras_minutos,
-        permiso_salida_temprana=permiso_salida_temprana
-    )
-
-    horas_ok = abs((horas_trab_td - horas_esperadas).total_seconds()) <= 60
-    extras_ok = abs((extras_td - extras_esperados).total_seconds()) <= 60
-
+    # ── Reglas de negocio sobre permisos / salida temprana ──
     if permiso_salida_temprana and salida_dt < salida_oficial_dt:
-        return "Revisar", "Salida temprana con permiso detectada; revisar si no corresponde a un cambio de turno o ajuste especial."
-
-    if salida_dt < salida_oficial_dt and entrada_dt <= entrada_oficial_dt:
-        return "Revisar", "Salida anticipada respecto al horario oficial; revisar permiso o ajuste especial."
-
-    if horas_ok and extras_ok:
-        return "OK", "Cálculo consistente con las marcaciones y el horario oficial."
-
-    detalle = []
-    if not horas_ok:
-        detalle.append(
-            f"Horas trabajadas esperado {formatear_hhmm(horas_esperadas)} pero se registró {formatear_hhmm(horas_trab_td)}"
+        alertas.append(
+            "Salida temprana con permiso detectada; verificar que corresponda a un "
+            "cambio de turno o ajuste especial autorizado."
         )
-    if not extras_ok:
-        detalle.append(
-            f"Horas extras esperado {formatear_hhmm(extras_esperados)} pero se registró {formatear_hhmm(extras_td)}"
+    elif salida_dt < salida_oficial_dt and entrada_dt <= entrada_oficial_dt:
+        alertas.append("Salida anticipada respecto al horario oficial, sin permiso registrado.")
+
+    # ── Chequeo aritmético básico (detecta bugs de código, no de marcación) ──
+    horas_esperadas = max((salida_dt - entrada_dt) - tiempo_almuerzo_td, timedelta(0))
+    if abs((horas_trab_td - horas_esperadas).total_seconds()) > 60:
+        alertas.append(
+            f"Horas trabajadas esperadas {formatear_hhmm(horas_esperadas)} vs. "
+            f"registradas {formatear_hhmm(horas_trab_td)} (inconsistencia interna)."
         )
-    return "Revisar", " | ".join(detalle)
+
+    # ── Jornada bruta con sentido físico ──
+    jornada_bruta = salida_dt - entrada_dt
+    if jornada_bruta.total_seconds() <= 0:
+        alertas.append("Salida registrada antes o igual que la entrada (marcación corrupta).")
+    elif jornada_bruta > timedelta(hours=14):
+        alertas.append(
+            f"Jornada bruta de {formatear_hhmm(jornada_bruta)} supera 14 horas; "
+            f"revisar si falta una marcación o se mezcló con otro día."
+        )
+
+    # ── Almuerzo con sentido físico ──
+    if salida_almuerzo_t and regreso_almuerzo_t and fecha:
+        alm = datetime.combine(fecha, regreso_almuerzo_t) - datetime.combine(fecha, salida_almuerzo_t)
+        if alm.total_seconds() < 0:
+            alertas.append("Regreso de almuerzo marcado antes que la salida a almuerzo.")
+        elif alm < timedelta(minutes=15):
+            alertas.append(
+                f"Almuerzo de solo {formatear_hhmm(alm)}; posible marcación duplicada o error del lector."
+            )
+        elif alm > timedelta(hours=3):
+            alertas.append(f"Almuerzo de {formatear_hhmm(alm)} inusualmente largo; revisar marcaciones.")
+
+    # ── Marcaciones muy próximas entre sí (doble lectura del huellero) ──
+    if marcas_dia and fecha:
+        for i in range(len(marcas_dia) - 1):
+            delta = datetime.combine(fecha, marcas_dia[i + 1]) - datetime.combine(fecha, marcas_dia[i])
+            if delta < timedelta(minutes=2):
+                alertas.append(
+                    f"Marcaciones {marcas_dia[i].strftime('%H:%M')} y "
+                    f"{marcas_dia[i + 1].strftime('%H:%M')} con menos de 2 min de diferencia; "
+                    f"posible doble lectura del huellero."
+                )
+
+        # El sistema solo usa 1ra, 2da, 3ra y última marca del día (ver asignar_marcaciones).
+        # Si hay más de 4, se están descartando marcaciones intermedias en silencio.
+        if len(marcas_dia) > 4:
+            descartadas = len(marcas_dia) - 4
+            alertas.append(
+                f"Se registraron {len(marcas_dia)} marcaciones en el día; el sistema solo usa la "
+                f"1ra, 2da, 3ra y última — hay {descartadas} marcación(es) intermedia(s) descartada(s), "
+                f"revisar manualmente."
+            )
+
+    # ── Imposibilidad matemática ──
+    if extras_td > horas_trab_td:
+        alertas.append("Las horas extra calculadas superan las horas trabajadas totales (imposible).")
+
+    if alertas:
+        return "Revisar", " | ".join(alertas)
+    return "OK", "Cálculo consistente y sin anomalías detectadas en los datos crudos."
 
 
 def asignar_marcaciones(horas_ordenadas: list, fecha) -> dict:
+    """
+    Asigna cada marcación cruda a un rol (entrada / salida almuerzo / regreso
+    almuerzo / salida). Con 2 o 4+ marcaciones la asignación es prácticamente
+    segura (primera=entrada, última=salida, y con 4+ las dos de en medio son
+    almuerzo). Con 1 o 3 marcaciones es una SUPOSICIÓN, porque no hay forma
+    de saber con solo la hora si a la persona le faltó marcar algo o si
+    marcó de más — por eso estos casos se devuelven marcados como
+    "ambiguo" para que procesar_registros los mande a revisión manual en
+    vez de darlos por buenos silenciosamente.
+    """
+    r = {
+        "entrada": None, "salida_almuerzo": None, "regreso_almuerzo": None, "salida": None,
+        "ambiguo": False, "motivo_ambiguo": None,
+    }
     n = len(horas_ordenadas)
-    r = {"entrada": None, "salida_almuerzo": None, "regreso_almuerzo": None, "salida": None}
-    if n == 0: return r
+    if n == 0:
+        return r
     if n == 1:
         h = horas_ordenadas[0]
         r["entrada" if h.hour < 13 else "salida"] = h
+        r["ambiguo"] = True
+        r["motivo_ambiguo"] = (
+            "Solo hay 1 marcación en el día; se asumió entrada o salida según la "
+            "hora, pero pudo faltar marcar el resto de la jornada."
+        )
         return r
     if n == 2:
         r["entrada"] = horas_ordenadas[0]
@@ -218,6 +286,13 @@ def asignar_marcaciones(horas_ordenadas: list, fecha) -> dict:
         r["entrada"]         = horas_ordenadas[0]
         r["salida_almuerzo"] = horas_ordenadas[1]
         r["salida"]          = horas_ordenadas[-1]
+        r["ambiguo"] = True
+        r["motivo_ambiguo"] = (
+            "Hay 3 marcaciones en el día; se asumió que la marca del medio es "
+            "'salida a almuerzo', pero pudo ser en realidad el 'regreso de "
+            "almuerzo' (si la persona olvidó marcar la salida) — confirmar con "
+            "la persona o el jefe directo."
+        )
         return r
     # n >= 4
     r["entrada"]          = horas_ordenadas[0]
@@ -305,7 +380,8 @@ def procesar_registros(df: pd.DataFrame, sede_or_horario, resolver_horario_fn=No
                 "Entrada": "--:--", "Sal. Almuerzo": "--:--",
                 "Reg. Almuerzo": "--:--", "Salida": "--:--",
                 "T. Almuerzo": "--:--", "Horas trabajadas": "no marcó",
-                "Tardanza": "no marcó", "Horas extras": "no marcó"})
+                "Tardanza": "no marcó", "Horas extras": "no marcó",
+                "Validación": "Revisar", "Detalle validación": "Día sin ninguna marcación registrada."})
             continue
 
         # ── Solo entrada ──
@@ -316,7 +392,8 @@ def procesar_registros(df: pd.DataFrame, sede_or_horario, resolver_horario_fn=No
                 "Reg. Almuerzo": regreso_almuerzo_t.strftime("%H:%M") if regreso_almuerzo_t else "--:--",
                 "Salida": "--:--", "T. Almuerzo": "--:--",
                 "Horas trabajadas": "no marcó salida",
-                "Tardanza": "no marcó salida", "Horas extras": "no marcó salida"})
+                "Tardanza": "no marcó salida", "Horas extras": "no marcó salida",
+                "Validación": "Revisar", "Detalle validación": "Falta marcación de salida."})
             continue
 
         # ── Solo salida ──
@@ -326,7 +403,8 @@ def procesar_registros(df: pd.DataFrame, sede_or_horario, resolver_horario_fn=No
                 "Reg. Almuerzo": "--:--", "Salida": salida_t.strftime("%H:%M"),
                 "T. Almuerzo": "--:--",
                 "Horas trabajadas": "no marcó entrada",
-                "Tardanza": "no marcó entrada", "Horas extras": "no marcó entrada"})
+                "Tardanza": "no marcó entrada", "Horas extras": "no marcó entrada",
+                "Validación": "Revisar", "Detalle validación": "Falta marcación de entrada."})
             continue
 
         # ── Caso normal ──
@@ -381,9 +459,25 @@ def procesar_registros(df: pd.DataFrame, sede_or_horario, resolver_horario_fn=No
             tiempo_almuerzo_td=tiempo_almuerzo,
             horas_trab_td=horas_trab,
             extras_td=extras,
+            marcas_dia=horas_dia,
+            salida_almuerzo_t=salida_almuerzo_t,
+            regreso_almuerzo_t=regreso_almuerzo_t,
+            fecha=fecha,
             umbral_extras_minutos=umbral_extras_minutos,
             permiso_salida_temprana=permiso_salida_temprana,
         )
+
+        # La asignación de marcaciones (1 o 3 marcas) es una suposición, no un
+        # hecho verificado: si fue ambigua, el día pasa a "Revisar" sin importar
+        # lo que haya dado el resto de los chequeos.
+        if marcas.get("ambiguo"):
+            estado_validacion = "Revisar"
+            motivo_asignacion = marcas["motivo_ambiguo"]
+            detalle_validacion = (
+                f"{motivo_asignacion} | {detalle_validacion}"
+                if detalle_validacion and detalle_validacion != "Cálculo consistente y sin anomalías detectadas en los datos crudos."
+                else motivo_asignacion
+            )
 
         filas_result.append({**base,
             "Entrada":          entrada_t.strftime("%H:%M"),
