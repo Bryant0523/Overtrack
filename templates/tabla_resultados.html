@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="max-w-6xl mx-auto brand-card p-6 my-5 rounded-3xl">
+    <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
+        <div>
+            <h1 class="text-2xl font-bold brand-heading">Reporte de horas</h1>
+            <p class="brand-text-muted">Resumen por empleado y permisos registrados.</p>
+        </div>
+        <div class="flex gap-3">
+            <a href="/descargar_resumen"
+                class="brand-button px-4 py-2 rounded-xl">Descargar resumen</a>
+            <a href="/limpiar"
+                class="bg-[#1d5e65] text-white px-4 py-2 rounded-xl hover:bg-[#2a405e]">Limpiar datos</a>
+            <a href="/permisos"
+                class="brand-button-secondary px-4 py-2 rounded-xl">Permisos</a>
+        </div>
+    </div>
+
+    {% if mensaje %}
+    <div class="rounded-3xl bg-[#60b5b3]/15 p-4 text-[#1d5e65] mb-6">{{ mensaje }}</div>
+    {% endif %}
+
+    {% if filas %}
+    <div class="overflow-x-auto">
+        <table class="brand-table min-w-full text-sm text-left border-collapse">
+            <thead class="bg-[#e6f4f4] text-[#1d1d1b]">
+                <tr>
+                    {% for col in columnas %}
+                    <th class="px-4 py-3 border-b">{{ col }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for fila in filas %}
+                <tr class="border-b hover:bg-[#f9f8f7]">
+                    {% for col in columnas %}
+                    <td class="px-4 py-3">{{ fila[col] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="rounded-3xl bg-[#f9f8f7] p-6 text-[#5e6d76]">No hay resultados disponibles.</div>
+    {% endif %}
+</div>
+
+{% endblock %}

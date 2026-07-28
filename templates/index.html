@@ -1,51 +1,72 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="max-w-lg mx-auto bg-white p-6 my-5 rounded shadow">
-        <h1 class="text-xl font-bold mb-4">Cargar archivo del huellero</h1>
 
-        <!-- FORMULARIO: fijate method y enctype -->
-        <form id="form-subir" action="{{ url_for('subir') }}" method="POST" enctype="multipart/form-data"
-            class="space-y-4">
-            <select name="sede" class="w-full border rounded p-2">
-                <option value="">Seleccionar sede…</option>
-                <option value="cartagena">Cartagena</option>
-                <option value="medellin">Medellín</option>
-                <option value="barranquilla">Barranquilla</option>
-            </select>
+<div class="ot-page-header">
+  <h1 class="ot-page-title">Procesar marcaciones</h1>
+  <p class="ot-page-sub">Sube el archivo del huellero y selecciona la sede para generar el reporte</p>
+</div>
 
-            <input type="file" name="archivo_csv" id="archivo_csv" accept=".csv,.xls,.xlsx" required
-                class="block w-full border rounded p-2" />
+{% if mensaje_error %}
+<div class="ot-alert ot-alert-danger">{{ mensaje_error }}</div>
+{% endif %}
 
-            <div class="flex gap-2">
+<form method="POST" action="/subir" enctype="multipart/form-data">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start">
 
-                <button
-                    class="px-4 py-2 rounded-md border border-green-300 bg-green-500 text-white text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200">
-                    Subir
-                </button>
-                <button id="btn-reset" type="button" onclick="document.getElementById('archivo_csv').value=''"
-                    class="px-3 py-2 border rounded">
-                    Limpiar
-                </button>
-            </div>
+    <!-- ZONA DE CARGA -->
+    <div class="ot-card" style="padding:28px;text-align:center">
+      <div style="font-size:36px;margin-bottom:12px">📂</div>
+      <p style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px">Arrastra tu archivo aquí</p>
+      <p style="font-size:11.5px;color:var(--ink-soft);margin-bottom:20px">Formatos soportados: CSV o Excel (.xlsx, .xls)</p>
 
-            <div id="status" class="text-sm text-gray-600 mt-2" style="display: none">
-                Subiendo…
-            </div>
-        </form>
-
-        <div class="mt-4 text-sm text-red-600">
-            {% if mensaje_error %} {{ mensaje_error }} {% endif %}
+      <label for="archivo_csv" style="cursor:pointer">
+        <div class="ot-btn ot-btn-primary" style="display:inline-flex;justify-content:center;width:100%;max-width:240px">
+          Seleccionar archivo
         </div>
+      </label>
+      <input type="file" id="archivo_csv" name="archivo_csv" accept=".csv,.xlsx,.xls" required
+             style="display:none" onchange="mostrarNombre(this)">
+
+      <p id="nombre-archivo" style="margin-top:12px;font-size:11px;color:var(--ink-soft)">
+        Ningún archivo seleccionado
+      </p>
     </div>
 
-    <script>
-        // Pequeña UX: indica que se está enviando y evita doble submit
-        const form = document.getElementById("form-subir");
-        const btn = document.getElementById("btn-subir");
-        const status = document.getElementById("status");
-        form.addEventListener("submit", (e) => {
-            btn.disabled = true;
-            status.style.display = "block";
-        });
-    </script>
+    <!-- OPCIONES -->
+    <div class="ot-card" style="padding:24px;display:flex;flex-direction:column;gap:16px">
+      <div>
+        <label class="ot-label">Sede</label>
+        <select name="sede" class="ot-input" required>
+          <option value="" disabled selected>Seleccionar sede…</option>
+          {% for sede in sedes %}
+          <option value="{{ sede }}">{{ sede.capitalize() }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="ot-divider" style="margin:4px 0"></div>
+
+      <div style="background:var(--surface);border-radius:var(--radius-sm);padding:12px 14px">
+        <p style="font-size:11px;color:var(--ink-soft);line-height:1.6">
+          El sistema detectará automáticamente las 4 marcaciones del día:<br>
+          <strong style="color:var(--ink-mid)">Entrada · Salida almuerzo · Regreso almuerzo · Salida</strong>
+        </p>
+      </div>
+
+      <button type="submit" class="ot-btn ot-btn-primary" style="justify-content:center;width:100%;padding:10px">
+        Procesar archivo →
+      </button>
+    </div>
+
+  </div>
+</form>
+
+<script>
+  function mostrarNombre(input) {
+    const label = document.getElementById('nombre-archivo');
+    label.textContent = input.files[0] ? input.files[0].name : 'Ningún archivo seleccionado';
+    label.style.color = input.files[0] ? 'var(--accent-dark)' : 'var(--ink-soft)';
+  }
+</script>
+
 {% endblock %}

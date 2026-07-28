@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+  <div class="ot-page-header" style="margin-bottom:0">
+    <h1 class="ot-page-title">Editar empleado</h1>
+    <p class="ot-page-sub">{{ emp.nombre }}</p>
+  </div>
+  <a href="/empleados" class="ot-btn ot-btn-ghost" style="font-size:12px">← Volver</a>
+</div>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for cat, msg in messages %}
+  <div class="ot-alert {{ 'ot-alert-success' if cat == 'success' else 'ot-alert-danger' }}">{{ msg }}</div>
+  {% endfor %}
+{% endwith %}
+
+<form method="POST">
+  <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:20px;align-items:start">
+
+    <!-- PANEL IZQUIERDO -->
+    <div class="ot-card" style="padding:22px;display:flex;flex-direction:column;gap:16px">
+
+      <div>
+        <label class="ot-label">Sede asignada</label>
+        <select name="sede" class="ot-input">
+          {% for sede in sedes %}
+          <option value="{{ sede }}" {% if sede == emp.sede %}selected{% endif %}>
+            {{ sede.capitalize() }}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="ot-divider" style="margin:4px 0"></div>
+
+      <div>
+        <label class="ot-label" style="margin-bottom:10px">Tipo de horario</label>
+        <div style="display:flex;flex-direction:column;gap:10px">
+
+          <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;padding:12px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface)">
+            <input type="radio" name="horario_custom" value="0"
+                   {% if not emp.horario_custom %}checked{% endif %}
+                   onchange="toggleHorario(0)"
+                   style="margin-top:2px;accent-color:var(--accent)">
+            <div>
+              <p style="font-size:12.5px;font-weight:600;color:var(--ink)">Horario de sede</p>
+              <p style="font-size:11px;color:var(--ink-soft);margin-top:2px">
+                Usa el horario configurado para {{ emp.sede.capitalize() }}
+              </p>
+            </div>
+          </label>
+
+          <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;padding:12px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface)">
+            <input type="radio" name="horario_custom" value="1"
+                   {% if emp.horario_custom %}checked{% endif %}
+                   onchange="toggleHorario(1)"
+                   style="margin-top:2px;accent-color:var(--accent)">
+            <div>
+              <p style="font-size:12.5px;font-weight:600;color:var(--ink)">Horario personalizado</p>
+              <p style="font-size:11px;color:var(--ink-soft);margin-top:2px">
+                Define entrada y salida individuales por día
+              </p>
+            </div>
+          </label>
+
+        </div>
+      </div>
+
+      <button type="submit" class="ot-btn ot-btn-primary"
+              style="justify-content:center;padding:10px;margin-top:4px">
+        Guardar cambios
+      </button>
+    </div>
+
+    <!-- PANEL DERECHO: horario por día -->
+    <div class="ot-card" style="padding:22px" id="panel-horario"
+         data-custom="{{ '1' if emp.horario_custom else '0' }}">
+
+      <p style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px">Horario por día</p>
+      <p style="font-size:11px;color:var(--ink-soft);margin-bottom:16px">
+        Deja en blanco los días que no trabaja este empleado
+      </p>
+
+      <div style="display:flex;flex-direction:column;gap:0">
+
+        <div style="display:grid;grid-template-columns:120px 1fr 1fr;gap:10px;
+                    padding:8px 12px;background:var(--surface);
+                    border-radius:var(--radius-sm) var(--radius-sm) 0 0;
+                    border:1px solid var(--border)">
+          <span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.7px;color:var(--ink-soft)">Día</span>
+          <span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.7px;color:var(--ink-soft)">Entrada</span>
+          <span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.7px;color:var(--ink-soft)">Salida</span>
+        </div>
+
+        {% for dia in dias %}
+        {% set h_custom = horario_actual.get(dia, {}) %}
+        {% set h_sede   = sede_horario.get(dia, {}) %}
+        <div class="hor-row {% if loop.last %}hor-row-last{% endif %}">
+          <span style="font-size:12.5px;font-weight:500;color:var(--ink);align-self:center">{{ dia }}</span>
+          <input type="time" name="entrada_{{ dia }}"
+                 value="{{ h_custom.entrada if h_custom.entrada else (h_sede.entrada if h_sede.entrada else '') }}"
+                 class="ot-input" style="padding:7px 10px;font-size:12px">
+          <input type="time" name="salida_{{ dia }}"
+                 value="{{ h_custom.salida if h_custom.salida else (h_sede.salida if h_sede.salida else '') }}"
+                 class="ot-input" style="padding:7px 10px;font-size:12px">
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <!-- Referencia sede -->
+      <div style="margin-top:14px;padding:12px;background:var(--accent-glow);
+                  border-radius:var(--radius-sm);border:1px solid rgba(0,180,166,0.15)">
+        <p style="font-size:11px;font-weight:600;color:var(--accent-dark);margin-bottom:6px">
+          Referencia — Horario sede {{ emp.sede.capitalize() }}
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          {% for dia, horas in sede_horario.items() %}
+          <span class="ot-badge ot-badge-gray" style="font-size:10.5px">
+            {{ dia[:3] }}: {{ horas.entrada }}–{{ horas.salida }}
+          </span>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</form>
+
+<style>
+  .hor-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-top: none;
+  }
+  .hor-row-last {
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  }
+</style>
+<script>
+  function toggleHorario(val) {
+    var panel = document.getElementById('panel-horario');
+    if (val === 1) {
+      panel.style.opacity = '1';
+      panel.style.pointerEvents = 'auto';
+    } else {
+      panel.style.opacity = '0.4';
+      panel.style.pointerEvents = 'none';
+    }
+  }
+  // Inicializar según valor actual
+  var panel = document.getElementById('panel-horario');
+  toggleHorario(parseInt(panel.dataset.custom));
+</script>
+
+{% endblock %}

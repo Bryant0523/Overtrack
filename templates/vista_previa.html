@@ -1,103 +1,217 @@
 {% extends "base.html" %}
 {% block content %}
-  
-<form method="POST" class="w-full flex items-center m-5 flex-wrap gap-6">
 
-    <!-- Selector de usuarios -->
-    <div class="flex items-center gap-3">
-        <label class="text-sm font-medium text-heading">Usuarios</label>
+<style>
+  .ot-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--surface-strong, #e8ecef);
+    border-radius: 12px;
+    background: var(--surface, #fff);
+    max-height: calc(100vh - 260px);
+    overflow-y: auto;
+  }
+  .ot-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 940px;
+  }
+  .ot-table th {
+    padding: 8px 10px;
+    font-size: 9.5px;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--surface, #fff);
+    box-shadow: inset 0 -1px 0 rgba(15, 25, 35, 0.08);
+  }
+  .ot-table td {
+    padding: 8px 10px;
+    font-size: 11px;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  .ot-table th:first-child,
+  .ot-table td:first-child {
+    min-width: 120px;
+    max-width: 160px;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .col-permiso { width: 90px; text-align: center; }
+</style>
 
-        <select
-            class="px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
-            name="empleado">
-            <option value="">Todos</option>
-            {% for n in nombres %}
-            <option value="{{ n }}" {% if empleado_seleccionado==n %}selected{% endif %}>
-                {{ n }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px">
+  <div class="ot-page-header" style="margin-bottom:0">
+    <h1 class="ot-page-title">Vista previa</h1>
+    <p class="ot-page-sub">Filtra por empleado o descarga el reporte completo</p>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <a class="ot-btn ot-btn-primary" href="/descargar_extras?nombre={{ empleado_seleccionado or 'todos' }}">↓ Horas extras</a>
+    <a class="ot-btn ot-btn-secondary" href="/descargar_llegadas?nombre={{ empleado_seleccionado or 'todos' }}">↓ Llegadas</a>
+  </div>
+</div>
 
-    <!-- Botones separados -->
-    <div class="flex items-center gap-3">
-        <button class="text-white bg-red-600 box-border border border-transparent hover:bg-bg-red-300 focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none"
-                name="accion" value="">
-            Filtrar
-        </button>
-    </div>
-
-    <!-- Enlaces -->
-    <div class="flex items-center  gap-4">
-        <a class="text-white bg-green-500 box-border border border-transparent hover:bg-green-300 focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none"
-           href="/descargar_extras?nombre={{ empleado_seleccionado or 'todos' }}">
-            Descargar horas extras
-        </a>
-
-        <a class="text-white bg-blue-500 box-border border border-transparent hover:bg-blue-300 focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none"
-           href="/descargar_llegadas?nombre={{ empleado_seleccionado or 'todos' }}">
-            Descargar llegadas
-        </a>
-    </div>
-
+<!-- FILTRO -->
+<form method="POST" style="margin-bottom:20px">
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+    <label class="ot-label" style="margin-bottom:0;white-space:nowrap">Empleado</label>
+    <select name="empleado" class="ot-input" style="max-width:260px">
+      <option value="">Todos</option>
+      {% for n in nombres %}
+      <option value="{{ n }}" {% if empleado_seleccionado == n %}selected{% endif %}>{{ n }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit" class="ot-btn ot-btn-secondary">Filtrar</button>
+  </div>
 </form>
 
-<hr>
-
-<div class="bg-neutral-primary-soft block p-6 border rounded-lg shadow-xs">
-  <table class="w-full text-sm text-left rtl:text-right text-body border border-slate-300 rounded-lg border">
-    <thead class="text-sm text-body bg-neutral-secondary-soft border-b rounded-base border-default sticky bg-white top-0 z-10">
+<!-- TABLA -->
+{% if tabla %}
+<div class="ot-table-wrap">
+  <table class="ot-table">
+    <thead>
       <tr>
         {% for col in tabla[0].keys() %}
-        <th class="px-6 py-3 font-medium">{{ col }}</th>
+        <th>{{ col }}</th>
         {% endfor %}
+        <th class="col-permiso">Permiso</th>
       </tr>
     </thead>
-
     <tbody>
       {% for fila in tabla %}
 
         {% if fila["Nombre"].startswith("TOTAL HORAS EXTRAS") %}
-        <!-- =======================================================
-             🔥 FILA ESPECIAL PARA TOTAL HORAS EXTRAS
-        ======================================================== -->
-        <tr class="bg-white-100 font-bold border-b-4 border-yellow-500">
-            {% for key, value in fila.items() %}
-                {% if loop.first %}
-                    <!-- COLUMNA QUE OCUPA TODA LA FILA -->
-                    <td class="px-6 py-3 text-lg" colspan="7">
-                        {{ value }}
-                    </td>
-                {% else %}
-                    {% if key == "Horas extras" %}
-                    <td class="px-6 py-3 text-lg text-right">
-                        {{ value }}
-                    </td>
-                    {% else %}
-                    <td class="px-6 py-3"></td>
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
+        <tr class="ot-row-total">
+          {% set ns = namespace(done=false) %}
+          {% for key, value in fila.items() %}
+            {% if not ns.done %}
+              <td colspan="9" style="font-size:11px;letter-spacing:0.3px;color:var(--ink)">{{ value }}</td>
+              {% set ns.done = true %}
+            {% elif key == "Tardanza" %}
+              <td style="font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:var(--ink-soft)">TOTAL</td>
+            {% elif key == "Horas extras" %}
+              <td style="color:var(--accent-dark);font-size:13px">{{ value }}</td>
+            {% endif %}
+          {% endfor %}
+          <td></td>
         </tr>
 
         {% else %}
-        <!-- =======================================================
-             ✔ FILA NORMAL
-        ======================================================== -->
         <tr>
-          {% for v in fila.values() %}
-          <td class="px-6 py-3 font-medium">{{ v }}</td>
+          {% for key, value in fila.items() %}
+            {% if key == "Tardanza" and value and value != "00h 00m" and value != "" and value != "--:--" %}
+              <td><span class="ot-badge ot-badge-red">{{ value }}</span></td>
+            {% elif key == "Horas extras" and value and value != "00h 00m" and value != "" and value != "--:--" %}
+              <td><span class="ot-badge ot-badge-teal">{{ value }}</span></td>
+            {% elif key == "Validación" and value == "Revisar" %}
+              <td><span class="ot-badge ot-badge-red" style="font-size:9px">Revisar</span></td>
+            {% elif key == "Validación" and value == "OK" %}
+              <td><span class="ot-badge ot-badge-teal" style="font-size:9px">OK</span></td>
+            {% elif key == "T. Almuerzo" and value and "(est.)" in value %}
+              <td style="color:var(--ink-ghost);font-style:italic;font-size:10px">{{ value }}</td>
+            {% elif value and "no marcó" in value|string %}
+              <td><span class="ot-badge ot-badge-warn" style="font-size:9.5px">{{ value }}</span></td>
+            {% elif value == "--:--" or value == "" %}
+              <td style="color:var(--ink-ghost)">—</td>
+            {% else %}
+              <td>{{ value }}</td>
+            {% endif %}
           {% endfor %}
+          <td class="col-permiso">
+            {% if fila.get("Permiso") %}
+              <span class="ot-badge ot-badge-warn" style="font-size:9px;cursor:pointer"
+                    title="{{ fila.Permiso }}"
+                    onclick="abrirModalPermiso('{{ fila.Nombre }}', '{{ fila.Fecha }}')">
+                📝 Ver
+              </span>
+            {% else %}
+              <button class="ot-btn ot-btn-ghost" style="font-size:10px;padding:3px 7px"
+                      onclick="abrirModalPermiso('{{ fila.Nombre }}', '{{ fila.Fecha }}')">
+                + Permiso
+              </button>
+            {% endif %}
+          </td>
         </tr>
-
         {% endif %}
 
       {% endfor %}
     </tbody>
-
   </table>
 </div>
+{% else %}
+<div class="ot-card" style="padding:48px;text-align:center">
+  <p style="color:var(--ink-soft)">No hay datos cargados. <a href="/" style="color:var(--accent)">Sube un archivo</a> primero.</p>
+</div>
+{% endif %}
 
-<br>
+<!-- MODAL -->
+<div id="modalPermiso" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+     background:rgba(0,0,0,0.45);z-index:1000;align-items:center;justify-content:center">
+  <div class="ot-card" style="padding:24px;max-width:400px;width:90%">
+    <h2 style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:18px">Agregar permiso</h2>
+
+    <div style="margin-bottom:12px">
+      <label class="ot-label">Empleado</label>
+      <input type="text" id="permisoNombre" readonly class="ot-input" style="background:var(--surface)">
+    </div>
+    <div style="margin-bottom:12px">
+      <label class="ot-label">Fecha</label>
+      <input type="text" id="permisoFecha" readonly class="ot-input" style="background:var(--surface)">
+    </div>
+    <div style="margin-bottom:12px">
+      <label class="ot-label">Tipo</label>
+      <select id="permisoTipo" class="ot-input">
+        <option value="tardanza">Tardanza justificada</option>
+        <option value="salida_temprana">Salida temprana</option>
+      </select>
+    </div>
+    <div style="margin-bottom:18px">
+      <label class="ot-label">Motivo / Justificación</label>
+      <textarea id="permisoMotivo" class="ot-input" style="min-height:72px;resize:vertical;font-family:inherit"></textarea>
+    </div>
+
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button class="ot-btn ot-btn-ghost" onclick="cerrarModalPermiso()">Cancelar</button>
+      <button class="ot-btn ot-btn-primary" onclick="guardarPermiso()">Guardar permiso</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function abrirModalPermiso(nombre, fecha) {
+  document.getElementById('permisoNombre').value = nombre;
+  document.getElementById('permisoFecha').value  = fecha;
+  document.getElementById('permisoTipo').value   = 'tardanza';
+  document.getElementById('permisoMotivo').value = '';
+  document.getElementById('modalPermiso').style.display = 'flex';
+}
+function cerrarModalPermiso() {
+  document.getElementById('modalPermiso').style.display = 'none';
+}
+function guardarPermiso() {
+  const payload = {
+    nombre: document.getElementById('permisoNombre').value,
+    fecha:  document.getElementById('permisoFecha').value,
+    tipo:   document.getElementById('permisoTipo').value,
+    motivo: document.getElementById('permisoMotivo').value,
+  };
+  fetch('/guardar_permiso', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload)
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.success) { cerrarModalPermiso(); location.reload(); }
+    else alert('Error: ' + data.error);
+  })
+  .catch(err => alert('Error de red: ' + err));
+}
+document.getElementById('modalPermiso').addEventListener('click', function(e) {
+  if (e.target === this) cerrarModalPermiso();
+});
+</script>
 
 {% endblock %}

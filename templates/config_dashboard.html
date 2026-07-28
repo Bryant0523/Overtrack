@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="max-w-6xl mx-auto">
+    <div class="flex justify-between items-center mb-6">
+        <div>
+            <h1 class="text-3xl font-bold brand-heading">📊 Dashboard de Configuraciones</h1>
+            <p class="brand-text-muted">Resumen rápido de métricas y accesos administrativos</p>
+        </div>
+        <a href="/configuraciones" class="text-[#2b8590] hover:underline">← Volver</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="brand-card p-6 rounded-3xl shadow">
+            <h3 class="text-sm brand-text-muted">Empleados registrados</h3>
+            <p class="text-2xl font-bold mt-2 text-[#60b5b3]">{{ total_empleados }}</p>
+        </div>
+        <div class="brand-card p-6 rounded-3xl shadow">
+            <h3 class="text-sm brand-text-muted">Sedes</h3>
+            <p class="text-2xl font-bold mt-2 text-[#2b8590]">{{ total_sedes }}</p>
+        </div>
+        <div class="brand-card p-6 rounded-3xl shadow">
+            <h3 class="text-sm brand-text-muted">Permisos registrados</h3>
+            <p class="text-2xl font-bold mt-2 text-[#1d5e65]">{{ total_permisos }}</p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        <div class="brand-card rounded-3xl shadow p-6">
+            <h3 class="text-sm brand-text-muted">Empleados presentes</h3>
+            <p class="text-3xl font-bold mt-2 text-[#60b5b3]">{{ resumen.empleados_presentes }}</p>
+        </div>
+        <div class="brand-card rounded-3xl shadow p-6">
+            <h3 class="text-sm brand-text-muted">Empleados con tardanza</h3>
+            <p class="text-3xl font-bold mt-2 text-[#2a405e]">{{ resumen.tardanzas }}</p>
+        </div>
+        <div class="brand-card rounded-3xl shadow p-6">
+            <h3 class="text-sm brand-text-muted">Empleados con horas extras</h3>
+            <p class="text-3xl font-bold mt-2 text-[#2b8590]">{{ resumen.horas_extras }}</p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-sm text-gray-600">Registros totales</h3>
+            <p class="text-3xl font-bold mt-2 text-slate-800">{{ resumen.registros }}</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-sm text-gray-600">Sedes disponibles</h3>
+            <p class="text-3xl font-bold mt-2 text-blue-600">{{ total_sedes }}</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-sm text-gray-600">Permisos registrados</h3>
+            <p class="text-3xl font-bold mt-2 text-purple-600">{{ total_permisos }}</p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mb-8">
+        <div class="brand-card rounded-3xl shadow p-6">
+            <h2 class="text-base font-semibold brand-heading mb-4">Asistencia</h2>
+            <canvas id="chartAsistencia" class="w-full h-64"></canvas>
+        </div>
+        <div class="brand-card rounded-3xl shadow p-6">
+            <h2 class="text-base font-semibold brand-heading mb-4">Tardanzas por empleado</h2>
+            <canvas id="chartTardanzas" class="w-full h-64"></canvas>
+        </div>
+        <div class="brand-card rounded-3xl shadow p-6">
+            <h2 class="text-base font-semibold brand-heading mb-4">Horas extras por empleado</h2>
+            <canvas id="chartExtras" class="w-full h-64"></canvas>
+        </div>
+    </div>
+
+    <div class="brand-card rounded-3xl shadow p-6 mb-6">
+        <h2 class="text-lg font-bold brand-heading mb-4">Top 5 tardanzas</h2>
+        {% if resumen.top_tardanzas %}
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left border-collapse">
+                <thead class="bg-slate-100 text-slate-700">
+                    <tr>
+                        <th class="px-4 py-3">Empleado</th>
+                        <th class="px-4 py-3">Fecha</th>
+                        <th class="px-4 py-3">Día</th>
+                        <th class="px-4 py-3">Tardanza</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in resumen.top_tardanzas %}
+                    <tr class="border-b hover:bg-slate-50">
+                        <td class="px-4 py-3">{{ item.Nombre }}</td>
+                        <td class="px-4 py-3">{{ item.Fecha }}</td>
+                        <td class="px-4 py-3">{{ item.Día }}</td>
+                        <td class="px-4 py-3">{{ item.Tardanza }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="brand-text-muted">No hay registros de tardanza para mostrar.</p>
+        {% endif %}
+    </div>
+
+    <div class="brand-card rounded-3xl shadow p-6">
+        <h2 class="text-lg font-bold mb-4">Top 5 horas extras</h2>
+        {% if resumen.top_extras %}
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left border-collapse">
+                <thead class="bg-slate-100 text-slate-700">
+                    <tr>
+                        <th class="px-4 py-3">Empleado</th>
+                        <th class="px-4 py-3">Fecha</th>
+                        <th class="px-4 py-3">Día</th>
+                        <th class="px-4 py-3">Horas extras</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in resumen.top_extras %}
+                    <tr class="border-b hover:bg-slate-50">
+                        <td class="px-4 py-3">{{ item.Nombre }}</td>
+                        <td class="px-4 py-3">{{ item.Fecha }}</td>
+                        <td class="px-4 py-3">{{ item.Día }}</td>
+                        <td class="px-4 py-3">{{ item["Horas extras"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="brand-text-muted">No hay registros de horas extras para mostrar.</p>
+        {% endif %}
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const asistenciaCtx = document.getElementById('chartAsistencia').getContext('2d');
+const tardanzasCtx = document.getElementById('chartTardanzas').getContext('2d');
+const extrasCtx = document.getElementById('chartExtras').getContext('2d');
+
+new Chart(asistenciaCtx, {
+    type: 'doughnut',
+    data: {
+        labels: {{ resumen.chart_asistencia.labels | tojson }},
+        datasets: [{
+            data: {{ resumen.chart_asistencia.data | tojson }},
+            backgroundColor: ['#10b981', '#64748b'],
+        }],
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { position: 'bottom' },
+        },
+    },
+});
+
+new Chart(tardanzasCtx, {
+    type: 'bar',
+    data: {
+        labels: {{ resumen.chart_tardanzas.labels | tojson }},
+        datasets: [{
+            label: 'Minutos de tardanza',
+            data: {{ resumen.chart_tardanzas.data | tojson }},
+            backgroundColor: '#ef4444',
+        }],
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: { beginAtZero: true },
+        },
+        plugins: {
+            legend: { display: false },
+        },
+    },
+});
+
+new Chart(extrasCtx, {
+    type: 'bar',
+    data: {
+        labels: {{ resumen.chart_extras.labels | tojson }},
+        datasets: [{
+            label: 'Minutos extras',
+            data: {{ resumen.chart_extras.data | tojson }},
+            backgroundColor: '#0ea5e9',
+        }],
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: { beginAtZero: true },
+        },
+        plugins: {
+            legend: { display: false },
+        },
+    },
+});
+</script>
+
+{% endblock %}

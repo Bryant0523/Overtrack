@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+  <div class="ot-page-header" style="margin-bottom:0">
+    <h1 class="ot-page-title">Base de empleados</h1>
+    <p class="ot-page-sub">Gestiona empleados y sus horarios individuales</p>
+  </div>
+  <span class="ot-badge ot-badge-navy" style="font-size:12px;padding:5px 14px">{{ empleados|length }} empleados</span>
+</div>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for cat, msg in messages %}
+  <div class="ot-alert {{ 'ot-alert-success' if cat == 'success' else 'ot-alert-danger' }}">{{ msg }}</div>
+  {% endfor %}
+{% endwith %}
+
+<!-- AGREGAR EMPLEADO -->
+<div class="ot-card" style="padding:20px;margin-bottom:20px">
+  <p style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:14px">Agregar empleado</p>
+  <form method="POST" action="/empleados/crear" style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end">
+    <div style="flex:2;min-width:200px">
+      <label class="ot-label">Nombre completo</label>
+      <input type="text" name="nombre" placeholder="ej: Juan Pérez" class="ot-input" required />
+    </div>
+    <div style="flex:1;min-width:160px">
+      <label class="ot-label">Sede</label>
+      <select name="sede" class="ot-input" required>
+        <option value="" disabled selected>Seleccionar…</option>
+        {% for sede in sedes %}
+        <option value="{{ sede }}">{{ sede.capitalize() }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit" class="ot-btn ot-btn-primary">+ Agregar</button>
+  </form>
+</div>
+
+<!-- TABLA DE EMPLEADOS -->
+{% if empleados %}
+<div class="ot-table-wrap">
+  <table class="ot-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Sede</th>
+        <th>Horario</th>
+        <th style="text-align:right">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for emp in empleados %}
+      <tr>
+        <td style="font-weight:500;color:var(--ink)">{{ emp.nombre }}</td>
+        <td><span class="ot-badge ot-badge-navy">{{ emp.sede.capitalize() }}</span></td>
+        <td>
+          {% if emp.horario_custom %}
+            <span class="ot-badge ot-badge-teal">⚙ Horario personalizado</span>
+          {% else %}
+            <span class="ot-badge ot-badge-gray">Horario de sede</span>
+          {% endif %}
+        </td>
+        <td style="text-align:right">
+          <div style="display:flex;gap:8px;justify-content:flex-end">
+            <a href="/empleados/editar/{{ emp.id }}" class="ot-btn ot-btn-secondary" style="font-size:11px">
+              Editar horario →
+            </a>
+            <form method="POST" action="/empleados/eliminar/{{ emp.id }}"
+                  onsubmit="return confirm('¿Eliminar a {{ emp.nombre }}?')" style="display:inline">
+              <button type="submit" class="ot-btn ot-btn-danger" style="font-size:11px">Eliminar</button>
+            </form>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="ot-card" style="padding:48px;text-align:center">
+  <p style="color:var(--ink-soft)">No hay empleados registrados aún. Agrega uno arriba o procesa un CSV para importarlos.</p>
+</div>
+{% endif %}
+
+{% endblock %}

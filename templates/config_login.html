@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="min-height:calc(100vh - 120px);display:flex;align-items:center;justify-content:center">
+  <div class="ot-card" style="width:100%;max-width:380px;padding:32px">
+
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="width:48px;height:48px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:22px">
+        ⚙️
+      </div>
+      <h1 style="font-size:18px;font-weight:700;color:var(--ink)">Configuraciones</h1>
+      <p style="font-size:12px;color:var(--ink-soft);margin-top:4px">Ingresa la contraseña para continuar</p>
+    </div>
+
+    {% if error %}
+    <div class="ot-alert ot-alert-danger">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" style="display:flex;flex-direction:column;gap:14px">
+      <div>
+        <label class="ot-label">Contraseña</label>
+        <input type="password" name="password" required
+               class="ot-input" placeholder="••••••••" autofocus />
+      </div>
+      <button type="submit" class="ot-btn ot-btn-primary" style="justify-content:center;width:100%;padding:10px;margin-top:4px">
+        Acceder →
+      </button>
+    </form>
+
+    <div class="ot-divider"></div>
+    <p style="text-align:center;font-size:12px">
+      <a href="/" style="color:var(--accent);text-decoration:none">← Volver al inicio</a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

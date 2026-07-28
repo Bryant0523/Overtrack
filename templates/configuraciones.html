@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+  <div class="ot-page-header" style="margin-bottom:0">
+    <h1 class="ot-page-title">Panel de configuraciones</h1>
+    <p class="ot-page-sub">Gestiona sedes, horarios y empleados del sistema</p>
+  </div>
+  <a href="/config/logout" class="ot-btn ot-btn-ghost" style="font-size:12px">Cerrar sesión</a>
+</div>
+
+<!-- STATS -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px">
+  <div class="ot-stat">
+    <div class="ot-stat-icon" style="background:var(--accent-glow)">🏢</div>
+    <div class="ot-stat-val">{{ total_sedes }}</div>
+    <div class="ot-stat-label">Sedes registradas</div>
+  </div>
+  <div class="ot-stat">
+    <div class="ot-stat-icon" style="background:var(--accent2-light)">👥</div>
+    <div class="ot-stat-val">{{ total_empleados }}</div>
+    <div class="ot-stat-label">Empleados cargados</div>
+  </div>
+  <div class="ot-stat">
+    <div class="ot-stat-icon" style="background:rgba(22,163,74,0.1)">✓</div>
+    <div class="ot-stat-val" style="color:var(--success)">Activo</div>
+    <div class="ot-stat-label">Estado del sistema</div>
+  </div>
+</div>
+
+<!-- GRID DE OPCIONES -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+
+  {% if mensaje_config %}
+  <div class="ot-card" style="padding:22px;grid-column:1/-1;border:1px solid var(--success);background:rgba(22,163,74,0.08)">
+    <p style="margin:0;font-size:14px;color:var(--success)">✅ {{ mensaje_config }}</p>
+  </div>
+  {% endif %}
+
+  <!-- Permisos -->
+  <div class="ot-card" style="padding:22px">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px">
+      <div>
+        <p style="font-size:14px;font-weight:700;color:var(--ink)">🔒 Permisos</p>
+        <p style="font-size:11.5px;color:var(--ink-soft);margin-top:3px">Registrar y revisar permisos por empleado</p>
+      </div>
+      <span class="ot-badge ot-badge-navy">{{ permisos|length if permisos is defined else 0 }}</span>
+    </div>
+    <a href="/permisos" class="ot-btn ot-btn-primary" style="font-size:12px">Ir a permisos →</a>
+  </div>
+
+  <!-- Umbral horas extras -->
+  <div class="ot-card" style="padding:22px">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px">
+      <div>
+        <p style="font-size:14px;font-weight:700;color:var(--ink)">⏱️ Umbral horas extras</p>
+        <p style="font-size:11.5px;color:var(--ink-soft);margin-top:3px">Minutos mínimos para que se considere hora extra.</p>
+      </div>
+      <span class="ot-badge ot-badge-teal">{{ settings.umbral_extras_minutos if settings is defined else 30 }} min</span>
+    </div>
+    <form method="POST" style="display:flex;gap:12px;align-items:center;margin-top:12px">
+      <input type="number" name="umbral_extras_minutos" min="0" value="{{ settings.umbral_extras_minutos if settings is defined else 30 }}"
+             class="ot-input" style="width:100px;padding:10px;border:1px solid var(--border);border-radius:14px" />
+      <button type="submit" class="ot-btn ot-btn-primary" style="font-size:12px;padding:10px 16px">Guardar</button>
+    </form>
+  </div>
+
+  <!-- Sedes -->
+  <div class="ot-card" style="padding:22px">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px">
+      <div>
+        <p style="font-size:14px;font-weight:700;color:var(--ink)">🏢 Sedes</p>
+        <p style="font-size:11.5px;color:var(--ink-soft);margin-top:3px">Crear, editar o eliminar sedes</p>
+      </div>
+      <span class="ot-badge ot-badge-teal">{{ total_sedes }}</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+      <a href="/config/sedes" class="ot-btn ot-btn-primary" style="font-size:12px">Gestionar sedes →</a>
+      {% if sedes %}
+      <a href="/config/horarios/{{ sedes[0] }}" class="ot-btn ot-btn-secondary" style="font-size:12px">Ajustar horarios</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Empleados -->
+  <div class="ot-card" style="padding:22px;grid-column:1/-1">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+      <p style="font-size:14px;font-weight:700;color:var(--ink)">👥 Empleados cargados</p>
+      <span class="ot-badge ot-badge-gray">{{ total_empleados }} total</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;max-height:160px;overflow-y:auto">
+      {% for emp in empleados %}
+      <span class="ot-badge ot-badge-gray" style="font-size:11px;font-weight:500">{{ emp }}</span>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

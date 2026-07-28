@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="display:grid;grid-template-columns:1fr 1.4fr;gap:20px;align-items:start">
+
+  <!-- FORMULARIO -->
+  <div>
+    <div class="ot-page-header">
+      <h1 class="ot-page-title">Registrar permiso</h1>
+      <p class="ot-page-sub">Agrega excepciones de entrada tardía o salida temprana</p>
+       
+    </div>
+  
+
+    {% if mensaje %}
+    <div class="ot-alert ot-alert-success">{{ mensaje }}</div>
+    {% endif %}
+    {% if mensaje_error %}
+    <div class="ot-alert ot-alert-danger">{{ mensaje_error }}</div>
+    {% endif %}
+
+    <div class="ot-card" style="padding:22px">
+      <form method="POST" style="display:flex;flex-direction:column;gap:14px">
+
+        <div>
+          <label class="ot-label">Nombre del empleado</label>
+          <input type="text" name="nombre" placeholder="Nombre completo" required class="ot-input" />
+        </div>
+
+        <div>
+          <label class="ot-label">Fecha</label>
+          <input type="date" name="fecha" required class="ot-input" />
+        </div>
+
+        <div>
+          <label class="ot-label">Tipo de permiso</label>
+          <select name="tipo" required class="ot-input">
+            <option value="" disabled selected>Seleccionar…</option>
+            <option value="entrada">Entrada tardía</option>
+            <option value="salida">Salida temprana</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="ot-label">Minutos de permiso</label>
+          <input type="number" name="minutos" min="1" placeholder="ej: 30" required class="ot-input" />
+        </div>
+
+        <div>
+          <label class="ot-label">Motivo <span style="color:var(--ink-ghost)">(opcional)</span></label>
+          <input type="text" name="motivo" placeholder="ej: Cita médica" class="ot-input" />
+        </div>
+
+        <button type="submit" class="ot-btn ot-btn-primary" style="justify-content:center;padding:10px;margin-top:4px">
+          Guardar permiso
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- LISTA DE PERMISOS -->
+  <div>
+    <div class="ot-page-header">
+      <h1 class="ot-page-title">Permisos registrados</h1>
+      <p class="ot-page-sub">Historial de excepciones activas</p>
+    </div>
+
+    {% if permisos %}
+    <div style="display:flex;flex-direction:column;gap:10px">
+      {% for permiso in permisos %}
+      <div class="ot-card" style="padding:16px 18px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+          <p style="font-size:13px;font-weight:600;color:var(--ink)">{{ permiso.nombre }}</p>
+          <span class="ot-badge {% if permiso.tipo == 'entrada' %}ot-badge-warn{% else %}ot-badge-navy{% endif %}">
+            {{ "Entrada tardía" if permiso.tipo == "entrada" else "Salida temprana" }}
+          </span>
+        </div>
+        <div style="display:flex;gap:16px;font-size:11.5px;color:var(--ink-soft)">
+          <span>📅 {{ permiso.fecha }}</span>
+          <span>⏱ {{ permiso.minutos }} min</span>
+          {% if permiso.motivo %}<span>📝 {{ permiso.motivo }}</span>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="ot-card" style="padding:40px;text-align:center">
+      <p style="color:var(--ink-soft);font-size:12px">No hay permisos registrados aún.</p>
+    </div>
+    {% endif %}
+  </div>
+
+</div>
+
+{% endblock %}
