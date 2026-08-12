@@ -1,72 +1,195 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="ot-page-header">
-  <h1 class="ot-page-title">Procesar marcaciones</h1>
-  <p class="ot-page-sub">Sube el archivo del huellero y selecciona la sede para generar el reporte</p>
+<style>
+  /* ── Estilos locales de esta pantalla (Horas Extras / home) ── */
+  .he-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .he-title-block h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 2px 0;
+  }
+  .he-title-block p {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .he-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .he-icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+
+  /* Pastilla de sede (select disfrazado de badge) */
+  .he-sede-pill {
+    position: relative;
+    display: inline-flex;
+  }
+  .he-sede-pill select {
+    appearance: none;
+    -webkit-appearance: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #EFF6FF;
+    color: #25dddda8;
+    border: 1px solid #DBEAFE;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 7px 30px 7px 30px;
+    cursor: pointer;
+  }
+  .he-sede-pill .he-icon {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #25dddda8;
+    pointer-events: none;
+  }
+  .he-sede-pill .he-chevron {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #25dddda8;
+    pointer-events: none;
+  }
+
+  /* Botones tipo "outline" del header (Configurar Horarios) */
+  .he-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #fff;
+    border: 1px solid var(--surface, #E5E7EB);
+    color: var(--ink-mid, #374151);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: var(--radius-sm, 8px);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .he-btn-outline:hover { background: #F9FAFB; }
+
+  /* Bloque central: invita a subir el CSV, es la acción principal de esta pantalla */
+  .he-upload-hero {
+    border: 1px dashed #E5E7EB;
+    border-radius: 14px;
+    padding: 48px 24px;
+    text-align: center;
+    margin-top: 4px;
+  }
+  .he-upload-hero-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #EEF2FF;
+    color: #25dddda8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px auto;
+  }
+  .he-upload-hero-icon svg { width: 20px; height: 20px; }
+  .he-upload-hero h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 4px 0;
+  }
+  .he-upload-hero p {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin: 0 0 18px 0;
+  }
+  .he-btn-solid {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background: #25dddda8;
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: var(--radius-sm, 8px);
+    cursor: pointer;
+  }
+  .he-btn-solid:hover { background: #21c2c2a8; }
+</style>
+
+<div class="he-header">
+  <div class="he-title-block">
+    <h1>Horas Extras</h1>
+    <p>Gestión de horas extras por sede</p>
+  </div>
+
+  <div class="he-header-actions">
+    <label class="he-sede-pill">
+      <svg class="he-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/>
+      </svg>
+      <select id="sede-header" form="form-subir" name="sede" required>
+        <option value="" disabled {% if not sedes %}selected{% endif %}>Seleccionar sede…</option>
+        {% for sede in sedes %}
+        <option value="{{ sede }}" {% if loop.first %}selected{% endif %}>Sede: {{ sede.capitalize() }}</option>
+        {% endfor %}
+      </select>
+      <svg class="he-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </label>
+
+    <a href="{{ url_for('horarios') }}" class="he-btn-outline">
+      <svg class="he-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </svg>
+      Configurar Horarios
+    </a>
+  </div>
 </div>
 
 {% if mensaje_error %}
 <div class="ot-alert ot-alert-danger">{{ mensaje_error }}</div>
 {% endif %}
 
-<form method="POST" action="/subir" enctype="multipart/form-data">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start">
-
-    <!-- ZONA DE CARGA -->
-    <div class="ot-card" style="padding:28px;text-align:center">
-      <div style="font-size:36px;margin-bottom:12px">📂</div>
-      <p style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px">Arrastra tu archivo aquí</p>
-      <p style="font-size:11.5px;color:var(--ink-soft);margin-bottom:20px">Formatos soportados: CSV o Excel (.xlsx, .xls)</p>
-
-      <label for="archivo_csv" style="cursor:pointer">
-        <div class="ot-btn ot-btn-primary" style="display:inline-flex;justify-content:center;width:100%;max-width:240px">
-          Seleccionar archivo
-        </div>
-      </label>
-      <input type="file" id="archivo_csv" name="archivo_csv" accept=".csv,.xlsx,.xls" required
-             style="display:none" onchange="mostrarNombre(this)">
-
-      <p id="nombre-archivo" style="margin-top:12px;font-size:11px;color:var(--ink-soft)">
-        Ningún archivo seleccionado
-      </p>
-    </div>
-
-    <!-- OPCIONES -->
-    <div class="ot-card" style="padding:24px;display:flex;flex-direction:column;gap:16px">
-      <div>
-        <label class="ot-label">Sede</label>
-        <select name="sede" class="ot-input" required>
-          <option value="" disabled selected>Seleccionar sede…</option>
-          {% for sede in sedes %}
-          <option value="{{ sede }}">{{ sede.capitalize() }}</option>
-          {% endfor %}
-        </select>
-      </div>
-
-      <div class="ot-divider" style="margin:4px 0"></div>
-
-      <div style="background:var(--surface);border-radius:var(--radius-sm);padding:12px 14px">
-        <p style="font-size:11px;color:var(--ink-soft);line-height:1.6">
-          El sistema detectará automáticamente las 4 marcaciones del día:<br>
-          <strong style="color:var(--ink-mid)">Entrada · Salida almuerzo · Regreso almuerzo · Salida</strong>
-        </p>
-      </div>
-
-      <button type="submit" class="ot-btn ot-btn-primary" style="justify-content:center;width:100%;padding:10px">
-        Procesar archivo →
-      </button>
-    </div>
-
+<div class="he-upload-hero">
+  <div class="he-upload-hero-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+    </svg>
   </div>
-</form>
+  <h2>Sube el archivo de la sede</h2>
+  <p>Selecciona la sede arriba y luego elige el CSV con los registros a procesar.</p>
+  <button type="button" class="he-btn-solid" onclick="document.getElementById('archivo_csv').click()">
+    Subir CSV
+  </button>
+</div>
 
-<script>
-  function mostrarNombre(input) {
-    const label = document.getElementById('nombre-archivo');
-    label.textContent = input.files[0] ? input.files[0].name : 'Ningún archivo seleccionado';
-    label.style.color = input.files[0] ? 'var(--accent-dark)' : 'var(--ink-soft)';
-  }
-</script>
+<!-- Formulario de carga real: el input queda oculto y el botón "Subir CSV"
+     lo activa. Al elegir archivo, se envía solo y el backend redirige a vistaprevia.html. -->
+<form id="form-subir" method="POST" action="/subir" enctype="multipart/form-data">
+  <input type="file" id="archivo_csv" name="archivo_csv" accept=".csv,.xlsx,.xls" required
+         style="display:none" onchange="this.form.requestSubmit()">
+</form>
 
 {% endblock %}

@@ -23,7 +23,7 @@
       --accent:       #00b4a6;
       --accent-dark:  #007f76;
       --accent-glow:  rgba(0,180,166,0.12);
-      --accent2:      #1e3a5f;
+      --accent2:      #2b8590;
       --accent2-light:rgba(30,58,95,0.08);
       --danger:       #e84646;
       --warn:         #f59e0b;
@@ -66,20 +66,21 @@
 
     .ot-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .ot-brand-logo {
-      width: 34px; height: 34px; border-radius: 9px;
-      background: linear-gradient(135deg, var(--accent-dark), var(--accent), #00d4c4);
+      width: 42px; height: 42px;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(0,180,166,0.35);
+      background: transparent;
+      box-shadow: none;
+      border-radius: 0;
     }
-    .ot-brand-logo img { width: 20px; height: 20px; object-fit: contain; }
+    .ot-brand-logo img { width: 36px; height: 36px; object-fit: contain; }
     .ot-brand-logo svg { width: 18px; height: 18px; }
     .ot-brand-name { color: #fff; font-size: 15px; font-weight: 700; letter-spacing: -0.3px; line-height: 1.1; }
-    .ot-brand-sub  { color: rgba(255,255,255,0.4); font-size: 9.5px; letter-spacing: 0.6px; text-transform: uppercase; }
+    .ot-brand-sub  { color: rgba(255, 255, 255, 0.897); font-size: 9.5px; letter-spacing: 0.6px; text-transform: uppercase; }
 
     .ot-nav-links { display: flex; gap: 2px; }
     .ot-nav-link {
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.904);
       font-size: 12.5px;
       font-weight: 500;
       padding: 6px 12px;
@@ -305,15 +306,10 @@
 
       <a href="/" class="ot-brand">
         <div class="ot-brand-logo">
-          {% if true %}
-          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="10" cy="10" r="7" stroke="white" stroke-width="1.6"/>
-            <path d="M10 6.5v3.8l2.5 1.5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          {% endif %}
+          <img src="{{ url_for('static', filename='Img/icon.png') }}" alt="Overtrack logo">
         </div>
         <div>
-          <div class="ot-brand-name">Overtrack</div>
+          <div class="ot-brand-name">Control de Horas DHI</div>
           <div class="ot-brand-sub">Control de horarios</div>
         </div>
       </a>

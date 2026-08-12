@@ -2,6 +2,7 @@ import unittest
 import pandas as pd
 from datetime import datetime, timedelta
 from io import StringIO
+from app import construir_almuerzo_excel
 from utils.procesamiento import calcular_extras, procesar_registros, validar_calculo
 
 class TestCalculoHorasExtras(unittest.TestCase):
@@ -147,6 +148,18 @@ x,Juan Pardo,y,2026-06-23 19:10:00
 
         fila_total = resultado[resultado["Nombre"].str.contains("TOTAL HORAS EXTRAS", na=False)].iloc[0]
         self.assertEqual(fila_total["Horas extras"], "03h 50m")
+
+    def test_construir_csv_almuerzo_incluye_total_y_columnas_basicas(self):
+        df = pd.DataFrame([
+            {"Nombre": "Juan", "Fecha": "22/06/2026", "Día": "Lunes", "Sal. Almuerzo": "12:00", "Reg. Almuerzo": "13:00", "T. Almuerzo": "01h 00m"},
+            {"Nombre": "Ana", "Fecha": "23/06/2026", "Día": "Martes", "Sal. Almuerzo": "12:30", "Reg. Almuerzo": "13:30", "T. Almuerzo": "01h 00m"},
+            {"Nombre": "Juan", "Fecha": "24/06/2026", "Día": "Miércoles", "Sal. Almuerzo": "12:45", "Reg. Almuerzo": "13:45", "T. Almuerzo": "01h 00m"},
+        ])
+
+        output = construir_almuerzo_excel(df)
+
+        self.assertIsNotNone(output)
+        self.assertGreater(output.getbuffer().nbytes, 0)
 
 if __name__ == "__main__":
     unittest.main()

@@ -3,8 +3,9 @@ import pandas as pd
 import os
 import io
 import json
-from openpyxl.styles import PatternFill, Alignment, Font
+from openpyxl.styles import PatternFill, Alignment, Font, Border, Side
 from openpyxl.worksheet.table import Table, TableStyleInfo
+from openpyxl.utils import get_column_letter
 
 from utils.procesamiento import (
     procesar_registros, HORARIOS_SEDES,
@@ -128,6 +129,106 @@ def guardar_config_sedes(config_dict):
         return True
     except Exception:
         return False
+
+
+def construir_almuerzo_excel(df):
+    """Construye un Excel con tablas de almuerzo en grilla (máx 3 por fila) con estilos."""
+    if df is None or df.empty:
+        return io.BytesIO()
+
+    df = df[~df["Nombre"].str.contains("TOTAL HORAS EXTRAS", na=False)].copy()
+    # Filtrar sábados (sin almuerzo)
+    df = df[df["Día"] != "Sábado"].copy()
+    
+    columnas = ["Nombre", "Fecha", "Día", "Sal. Almuerzo", "Reg. Almuerzo", "T. Almuerzo"]
+    df = df[[c for c in columnas if c in df.columns]]
+
+    df = df.copy()
+    df["Minutos almuerzo"] = 0
+    for idx, row in df.iterrows():
+        valor = row.get("T. Almuerzo", "")
+        if isinstance(valor, str) and "h" in valor:
+            partes = valor.replace("h", "").replace("m", "").split()
+            try:
+                df.at[idx, "Minutos almuerzo"] = int(partes[0]) * 60 + int(partes[1])
+            except Exception:
+                df.at[idx, "Minutos almuerzo"] = 0
+
+    df = df.sort_values(["Nombre", "Fecha"], kind="mergesort", na_position="last")
+
+    output = io.BytesIO()
+    with pd.ExcelWriter(output, engine="openpyxl") as writer:
+        hoja = writer.book.create_sheet("Almuerzo", 0)
+        
+        empleados = sorted(df["Nombre"].unique())
+        max_cols_por_fila = 3
+        cols_por_tabla = 6  # 5 columnas de datos + 1 de separación
+        
+        # Estilos
+        estilo_encabezado = PatternFill(start_color="4CAF50", end_color="4CAF50", fill_type="solid")
+        estilo_fuente_encabezado = Font(bold=True, color="FFFFFF")
+        estilo_borde_cell = Alignment(wrap_text=True, vertical="center")
+        
+        borde_thin = Border(
+            left=Side(style='thin'),
+            right=Side(style='thin'),
+            top=Side(style='thin'),
+            bottom=Side(style='thin')
+        )
+        
+        fila_actual = 1
+        
+        # Procesar empleados en grupos de 3
+        for grupo_idx in range(0, len(empleados), max_cols_por_fila):
+            grupo_empleados = empleados[grupo_idx:grupo_idx + max_cols_por_fila]
+            
+            # Calcular altura máxima del grupo
+            altura_max = 0
+            for emp in grupo_empleados:
+                grp = df[df["Nombre"] == emp]
+                altura = len(grp) + 2  # datos + encabezado + títulos (sin total)
+                altura_max = max(altura_max, altura)
+            
+            # Dibujar tablas lado a lado
+            for col_pos, empleado in enumerate(grupo_empleados):
+                grp = df[df["Nombre"] == empleado].copy()
+                grp_show = grp[["Fecha", "Día", "Sal. Almuerzo", "Reg. Almuerzo", "T. Almuerzo"]]
+                
+                col_inicio = 1 + (col_pos * cols_por_tabla)
+                
+                # Encabezado con nombre del empleado
+                celda_titulo = hoja.cell(row=fila_actual, column=col_inicio, value=empleado.upper())
+                celda_titulo.fill = estilo_encabezado
+                celda_titulo.font = estilo_fuente_encabezado
+                celda_titulo.border = borde_thin
+                
+                # Títulos de columnas
+                cols_titulo = ["Fecha", "Día", "Sal. Almuerzo", "Reg. Almuerzo", "T. Almuerzo"]
+                for i, titulo in enumerate(cols_titulo):
+                    celda = hoja.cell(row=fila_actual + 1, column=col_inicio + i, value=titulo)
+                    celda.fill = estilo_encabezado
+                    celda.font = estilo_fuente_encabezado
+                    celda.border = borde_thin
+                    celda.alignment = estilo_borde_cell
+                
+                # Datos
+                for fila_idx, (_, fila) in enumerate(grp_show.iterrows(), start=2):
+                    for col_idx_offset, col_nombre in enumerate(cols_titulo):
+                        valor = fila.get(col_nombre, "")
+                        celda = hoja.cell(row=fila_actual + fila_idx, column=col_inicio + col_idx_offset, value=valor)
+                        celda.border = borde_thin
+                        celda.alignment = estilo_borde_cell
+                
+                # Ajustar ancho de columnas
+                for i in range(5):
+                    col_letra = get_column_letter(col_inicio + i)
+                    hoja.column_dimensions[col_letra].width = 18
+            
+            # Pasar a siguiente grupo de filas (altura_max + 2 para separación)
+            fila_actual += altura_max + 2
+
+    output.seek(0)
+    return output
 
 
 # ─────────────────────────────────────────────────────────────
@@ -419,7 +520,7 @@ def descargar_resumen():
         hoja     = writer.sheets["Resumen"]
         last_row = len(resumen) + 1
         last_col = len(resumen[0].keys()) if resumen else 1
-        tabla    = Table(displayName="TablaResumen", ref=f"A1:{chr(64+last_col)}{last_row}")
+        tabla    = Table(displayName="TablaResumen", ref=f"A1:{get_column_letter(last_col)}{last_row}")
         tabla.tableStyleInfo = TableStyleInfo(name="TableStyleMedium9",
             showFirstColumn=False, showLastColumn=False,
             showRowStripes=True, showColumnStripes=False)
@@ -532,7 +633,7 @@ def descargar_extras():
                 hoja = writer.sheets[nombre_hoja]
                 last_row = len(df_empleado) + 1
                 last_col = len(df_empleado.columns)
-                tabla = Table(displayName=f"Tabla{nombre_hoja.replace(' ', '')}", ref=f"A1:{chr(64+last_col)}{last_row}")
+                tabla = Table(displayName=f"Tabla{nombre_hoja.replace(' ', '')}", ref=f"A1:{get_column_letter(last_col)}{last_row}")
                 tabla.tableStyleInfo = TableStyleInfo(name="TableStyleLight11",
                     showFirstColumn=False, showLastColumn=False,
                     showRowStripes=False, showColumnStripes=False)
@@ -570,7 +671,7 @@ def descargar_extras():
             hoja = writer.sheets["Horas Extras"]
             last_row = len(df_total) + 1
             last_col = len(df_total.columns)
-            tabla = Table(displayName="TablaExtras", ref=f"A1:{chr(64+last_col)}{last_row}")
+            tabla = Table(displayName="TablaExtras", ref=f"A1:{get_column_letter(last_col)}{last_row}")
             tabla.tableStyleInfo = TableStyleInfo(name="TableStyleLight11",
                 showFirstColumn=False, showLastColumn=False,
                 showRowStripes=False, showColumnStripes=False)
@@ -619,7 +720,7 @@ def descargar_llegadas():
         hoja     = writer.sheets["Llegadas"]
         last_row = len(df) + 1
         last_col = len(df.columns)
-        tabla    = Table(displayName="TablaLlegadas", ref=f"A1:{chr(64+last_col)}{last_row}")
+        tabla    = Table(displayName="TablaLlegadas", ref=f"A1:{get_column_letter(last_col)}{last_row}")
         tabla.tableStyleInfo = TableStyleInfo(name="TableStyleLight11",
             showFirstColumn=False, showLastColumn=False,
             showRowStripes=False, showColumnStripes=False)
@@ -631,6 +732,26 @@ def descargar_llegadas():
             hoja.row_dimensions[i].height = 22
     output.seek(0)
     return send_file(output, download_name=f"llegadas_{nombre}.xlsx", as_attachment=True)
+
+
+@app.route("/descargar_almuerzo")
+def descargar_almuerzo():
+    nombre = request.args.get("nombre", "todos")
+    df     = MEMORY.get("df")
+    if df is None or df.empty:
+        return "No hay datos cargados", 400
+
+    df = df[~df["Nombre"].str.contains("TOTAL HORAS EXTRAS", na=False)].copy()
+    if nombre != "todos":
+        df = df[df["Nombre"] == nombre].copy()
+
+    output = construir_almuerzo_excel(df)
+    return send_file(
+        output,
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        download_name=f"almuerzo_{nombre}.xlsx",
+        as_attachment=True,
+    )
 
 
 # ─────────────────────────────────────────────────────────────
