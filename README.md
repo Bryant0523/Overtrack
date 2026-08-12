@@ -1,33 +1,41 @@
 # Overtrack
 
-Overtrack es una aplicación web en Flask que procesa registros de marcaciones de un huellero para generar reportes de asistencia, tardanzas y horas extras.
+Overtrack es una aplicación web desarrollada en Flask para procesar registros de marcaciones de un huellero y generar reportes de asistencia, tardanzas, horas extras y almuerzos.
 
 ## Funcionalidad principal
 
 - Cargar archivos CSV o Excel con datos de marcaciones.
-- Seleccionar la sede de trabajo (Medellín, Barranquilla o Cartagena).
-- Procesar registros de entrada/salida por empleado y fecha.
+- Seleccionar la sede de trabajo y procesar registros según el horario de la sede.
+- Usar horarios personalizados por empleado cuando existen en la base de datos.
 - Mostrar una vista previa con:
   - Nombre
   - Fecha
   - Día
   - Entrada
   - Salida
+  - Salida y regreso de almuerzo
   - Horas trabajadas
   - Tardanza
   - Horas extras
-- Filtrar por empleado.
-- Exportar reportes en Excel:
-  - Horas extras
-  - Llegadas
+  - Permisos asociados
+- Filtrar por empleado en la vista previa.
+- Descargar reportes Excel:
+  - resumen de horas trabajadas
+  - horas extras
+  - llegadas
+  - reporte de almuerzo
+- Administrar empleados, sedes, horarios y permisos desde la interfaz.
 
 ## Estructura del proyecto
 
-- `app.py` - aplicación principal de Flask.
-- `utils/procesamiento.py` - lógica para procesar los registros de marcaciones.
-- `templates/` - plantillas HTML de la interfaz.
-- `static/` - recursos estáticos como CSS.
-- `uploads/` - carpeta donde se guardan los archivos cargados.
+- `app.py` - aplicación principal de Flask y rutas.
+- `database.py` - lógica de SQLite para empleados, horarios y permisos.
+- `utils/procesamiento.py` - lógica de carga y procesamiento de marcaciones.
+- `templates/` - plantillas HTML para la interfaz.
+- `static/` - recursos estáticos como imágenes y estilos.
+- `uploads/` - archivos cargados temporalmente.
+- `config/` - archivos JSON para sedes, empleados y ajustes.
+- `requeriments.txt` - dependencias del proyecto.
 
 ## Requisitos
 
@@ -61,7 +69,7 @@ venv\Scripts\activate.bat
 3. Instalar dependencias:
 
 ```bash
-pip install flask pandas openpyxl
+pip install -r requeriments.txt
 ```
 
 ## Uso
@@ -79,29 +87,45 @@ http://127.0.0.1:5000/
 ```
 
 3. Seleccionar la sede y cargar un archivo CSV o Excel.
-4. Revisar la vista previa y descargar los reportes.
+4. Revisar la vista previa y descargar los reportes correspondientes.
+5. Si es necesario, acceder a la configuración con la ruta `/config/login`.
 
-## Sedes y horarios predefinidos
+## Rutas y opciones principales
 
-- `medellin`
-  - Lunes a sábado: 08:00 - 17:00
-- `barranquilla`
-  - Lunes a viernes: 08:00 - 17:00
-  - Sábado: 09:00 - 14:00
-- `cartagena`
-  - Lunes a viernes: 09:00 - 17:30
-  - Sábado: 09:00 - 15:00
+- `/` - página principal para cargar marcaciones.
+- `/vista_previa` - vista previa de los resultados.
+- `/tabla_resultados` - tabla con resumen por empleado.
+- `/descargar_resumen` - descarga resumen de horas.
+- `/descargar_extras` - descarga reporte de horas extras.
+- `/descargar_llegadas` - descarga reporte de llegadas.
+- `/descargar_almuerzo` - descarga reporte de almuerzos.
+- `/empleados` - gestión de empleados.
+- `/permisos` - gestión de permisos temporales.
+- `/ajustes` - panel de ajustes básicos.
+- `/config/login` - acceso a configuración protegida.
+- `/config/sedes` - administración de sedes.
+- `/config/horarios/<sede>` - edición de horarios por sede.
+
+## Configuración y base de datos
+
+- La aplicación usa SQLite para almacenar empleados, horarios personalizados y permisos.
+- La base de datos se inicializa automáticamente al arrancar `app.py`.
+- Los horarios de sedes se cargan desde `config/sedes.json` y pueden editarse desde la interfaz.
+- El umbral mínimo para horas extras se puede ajustar en `config/settings.json`.
 
 ## Notas importantes
 
-- El cálculo de horas extras considera entrada antes del horario oficial y salida después del horario oficial.
-- Si el empleado no marca entrada o salida, se muestra un mensaje específico.
-- La aplicación guarda temporalmente los datos procesados en memoria durante la sesión.
-- La exportación crea archivos Excel con formato y totales.
+- El cálculo de horas extras considera entrada temprana y salida tardía respecto al horario oficial.
+- Las horas extras menores al umbral configurado (por defecto 30 minutos) se ignoran.
+- Los permisos de tardanza o salida temprana se guardan en la base de datos y se aplican al reporte.
+- La aplicación guarda datos procesados en memoria durante la sesión; si reinicias el servidor se pierde la carga actual.
 
-## Mejoras futuras
+## Recomendaciones
 
-- Agregar un archivo `requirements.txt` para instalar dependencias automáticamente.
-- Soporte completo para versiones de domingos y días no laborales.
-- Validación más robusta del formato de los archivos de entrada.
-- Guardado persistente de datos si se desea conservar los registros.
+- Usa archivos CSV o Excel que contengan las columnas de marcaciones del huellero.
+- Revisa la página de configuración para validar que las sedes y horarios estén bien definidos.
+- Si agregas nuevos empleados, confirma que el nombre esté bien escrito para que se mantenga en la lista.
+
+## Contacto
+
+Para ayuda adicional, revisa los archivos `app.py`, `database.py` y `utils/procesamiento.py` para comprender la lógica de procesamiento y los datos esperados.
